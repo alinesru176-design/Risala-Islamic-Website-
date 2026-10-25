@@ -1,0 +1,30 @@
+{
+  "name": "ሪሳላ ኢስላማዊ ፋውንዴሽን",
+  "short_name": "ሪሳላ",
+  "description": "ኢስላማዊ ትምህርቶች፣ የሶላት ሰዓት፣ ቂብላ፣ ዱዓ፣ ተስቢህ እና ሌሎችም።",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0b08",
+  "theme_color": "#0B6E4F",
+  "lang": "am",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

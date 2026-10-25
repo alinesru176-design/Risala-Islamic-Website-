@@ -13,13 +13,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ሪሳላ ኢስላማዊ ፋውንዴሽን">
 <meta property="og:description" content="ኢስላማዊ ትምህርቶች፣ የሶላት ሰዓት፣ ቂብላ፣ ዱዓ፣ ተስቢህ እና ሌሎችም።">
-<meta property="og:image" content="https://alinesru176-design.github.io/Risala-Islamic-Website-/icons/icon-512.png">
+<meta property="og:image" content="https://alinesru176-design.github.io/Risala-Islamic-Website-/icon-512.png">
 <meta name="google-site-verification" content="NwZR4lZ2STjXwJoxmV3OEv3YBOG4AnvGfNY4pzo6svM" />
 <link rel="canonical" href="https://alinesru176-design.github.io/Risala-Islamic-Website-/">
 <meta property="og:url" content="https://alinesru176-design.github.io/Risala-Islamic-Website-/">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;800&display=swap" rel="stylesheet">
@@ -836,7 +836,7 @@ function notify(title,body){
   try{ if(navigator.vibrate) navigator.vibrate([200,100,200]); }catch(e){}
   try{
     if('Notification' in window && Notification.permission==='granted'){
-      const opt={body:body||'',icon:'icons/icon-192.png',badge:'icons/icon-192.png',tag:'risala-prayer'};
+      const opt={body:body||'',icon:'icon-192.png',badge:'icon-192.png',tag:'risala-prayer'};
       if(navigator.serviceWorker && navigator.serviceWorker.ready){ navigator.serviceWorker.ready.then(r=>r.showNotification(title,opt)).catch(()=>{ try{ new Notification(title,opt); }catch(e){} }); }
       else new Notification(title,opt);
     }
