@@ -13,7 +13,10 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ሪሳላ ኢስላማዊ ፋውንዴሽን">
 <meta property="og:description" content="ኢስላማዊ ትምህርቶች፣ የሶላት ሰዓት፣ ቂብላ፣ ዱዓ፣ ተስቢህ እና ሌሎችም።">
-<meta property="og:image" content="icons/icon-512.png">
+<meta property="og:image" content="https://risalaislamic.github.io/risala/icons/icon-512.png">
+<meta name="google-site-verification" content="NwZR4lZ2STjXwJoxmV3OEv3YBOG4AnvGfNY4pzo6svM" />
+<link rel="canonical" href="https://risalaislamic.github.io/risala/">
+<meta property="og:url" content="https://risalaislamic.github.io/risala/">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -403,6 +406,19 @@ nav.bottom button.active .ni{transform:translateY(-2px) scale(1.15);}
 .compassWrap .ring{position:absolute;inset:0;transition:transform .15s linear;}
 .compassWrap .kaaba{position:absolute;inset:0;transition:transform .15s linear;}
 .compassHint{font-size:12px;color:var(--muted);margin-top:8px;}
+
+/* ===== Install-app banner ===== */
+#installBar{position:fixed;left:10px;right:10px;bottom:calc(74px + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;z-index:40;
+  background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:16px;padding:12px;box-shadow:0 8px 28px rgba(0,0,0,.35);
+  display:flex;align-items:center;gap:10px;animation:fadeUp .35s both;}
+#installBar img{width:44px;height:44px;border-radius:10px;flex:none;object-fit:cover;}
+#installBar .it{flex:1;min-width:0;}
+#installBar .it b{display:block;font-size:14px;}
+#installBar .it span{display:block;font-size:12px;color:var(--muted);}
+#installBar .ib{display:flex;flex-direction:column;gap:6px;flex:none;}
+#installBar button,#installBar a{border:none;border-radius:10px;padding:9px 12px;font:inherit;font-size:13px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;}
+#installBar .go{background:var(--accent);color:#fff;}
+#installBar .no{background:transparent;color:var(--muted);padding:2px 6px;font-size:12px;font-weight:600;}
 </style>
 </head>
 <body>
@@ -1336,6 +1352,38 @@ setInterval(checkPrayer,15000);
 document.addEventListener('visibilitychange',()=>{ if(!document.hidden) checkPrayer(); });
 /* browsers block audio until the first tap — unlock it silently */
 (function(){ const un=()=>{ try{ const a=new Audio(); a.muted=true; a.play&&a.play().catch(()=>{}); }catch(e){} document.removeEventListener('pointerdown',un); }; document.addEventListener('pointerdown',un,{once:true}); })();
+/* ===== Ask visitors to install / download the app ===== */
+(function(){
+  const ua=navigator.userAgent||'';
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  const inAppWebView=/; wv\)/.test(ua)||!location.protocol.startsWith('http');
+  const isAndroid=/Android/i.test(ua), isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(isStandalone||inAppWebView||!(isAndroid||isIOS)) return;
+  const KEY='risala_install_dismissed';
+  try{ const d=+localStorage.getItem(KEY)||0; if(Date.now()-d<3*24*3600*1000) return; }catch(e){}
+  let deferred=null;
+  window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferred=e; const b=document.getElementById('instPwa'); if(b) b.style.display=''; });
+  window.addEventListener('appinstalled',()=>hide(true));
+  function hide(save){ const el=document.getElementById('installBar'); if(el) el.remove(); if(save){ try{localStorage.setItem(KEY,String(Date.now()));}catch(e){} } }
+  function show(){
+    if(document.getElementById('installBar')) return;
+    const bar=document.createElement('div'); bar.id='installBar';
+    const am=DATA.lang==='am';
+    const title=am?'የሪሳላ አፑን ያውርዱ':'Get the Risala app';
+    const sub=isIOS?(am?'በSafari ወደ መነሻ ገጽ ያክሉት':'Add it to your Home Screen'):(am?'ፈጣን፣ ያለ ኢንተርኔትም ይሰራል':'Faster, works offline');
+    bar.innerHTML=`<img src="${LOGO_URI}" alt=""><div class="it"><b>${title}</b><span>${sub}</span></div>
+      <div class="ib">${isAndroid?`<a class="go" href="risala.apk" download="Risala.apk" id="instApk">⬇ ${am?'አውርድ':'Download'}</a>`:`<button class="go" id="instIos">${am?'እንዴት?':'How?'}</button>`}
+      ${isAndroid?`<button class="go" id="instPwa" style="display:none;background:var(--brand)">${am?'ጫን':'Install'}</button>`:''}
+      <button class="no" id="instNo">${am?'ዝጋ':'Not now'}</button></div>`;
+    document.body.appendChild(bar);
+    document.getElementById('instNo').onclick=()=>hide(true);
+    const apk=document.getElementById('instApk'); if(apk) apk.addEventListener('click',()=>{ toast(am?'ማውረድ ተጀምሯል። ከጨረሰ በኋላ ፋይሉን ከፍተው ይጫኑ።':'Download started. Open the file to install.'); setTimeout(()=>hide(true),1500); });
+    const pwa=document.getElementById('instPwa'); if(pwa){ if(deferred) pwa.style.display=''; pwa.onclick=async()=>{ if(!deferred) return; deferred.prompt(); try{ await deferred.userChoice; }catch(e){} deferred=null; hide(true); }; }
+    const ios=document.getElementById('instIos'); if(ios) ios.onclick=()=>openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${am?'አፑን በiPhone ላይ ለመጫን':'Install on iPhone'}</h3>
+      <p style="line-height:1.9">${am?'1. Safari ውስጥ የ <b>Share</b> (⬆︎) ምልክቱን ይጫኑ<br>2. <b>"Add to Home Screen"</b> ይምረጡ<br>3. <b>Add</b> ይጫኑ':'1. Tap the <b>Share</b> (⬆︎) button in Safari<br>2. Choose <b>"Add to Home Screen"</b><br>3. Tap <b>Add</b>'}</p>`);
+  }
+  setTimeout(show,3200);
+})();
 /* PWA: offline support */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){ window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
 setInterval(()=>{ const e=document.getElementById('nextPrayer'); if(e) e.textContent=nextPrayerText(); },30000);
