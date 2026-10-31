@@ -419,6 +419,59 @@ nav.bottom button.active .ni{transform:translateY(-2px) scale(1.15);}
 #installBar button,#installBar a{border:none;border-radius:10px;padding:9px 12px;font:inherit;font-size:13px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;}
 #installBar .go{background:var(--accent);color:#fff;}
 #installBar .no{background:transparent;color:var(--muted);padding:2px 6px;font-size:12px;font-weight:600;}
+
+/* ===== Daily worship tracker ===== */
+.trackRow{display:flex;align-items:center;gap:12px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;font-size:14px;font-weight:700;color:var(--text);text-align:start;}
+.trackRow.done{border-color:var(--accent);}
+.trackBox{width:26px;height:26px;border-radius:8px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex:none;}
+.trackRow.done .trackBox{background:var(--accent);}
+.trackEn{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;}
+.progBar{height:10px;border-radius:99px;background:rgba(var(--acc-rgb),.15);overflow:hidden;margin:8px 0;}
+.progFill{height:100%;background:var(--accent);border-radius:99px;transition:width .3s;}
+.trackNote{font-size:12px;color:var(--muted);}
+/* ===== Qaida Nooraniyah ===== */
+.qIntro{background:var(--surface);border:1px solid rgba(var(--acc-rgb),.3);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.7;margin-bottom:12px;}
+.qRow{display:grid;grid-template-columns:70px 1fr 1fr 1fr;gap:6px;align-items:stretch;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.2);border-radius:14px;padding:8px;margin-bottom:8px;}
+.qName{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;color:var(--muted);font-weight:700;background:none;border:none;font-family:inherit;}
+.qName b{font-size:26px;color:var(--accent);font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;line-height:1.3;}
+.qCell{background:rgba(var(--acc-rgb),.08);border:1px solid rgba(var(--acc-rgb),.25);border-radius:12px;padding:10px 0;font-size:30px;line-height:1.4;color:var(--text);font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;direction:rtl;}
+.qCell:active,.qName:active{transform:scale(.95);}
+.qHint{font-size:10.5px;color:var(--muted);text-align:center;margin-top:2px;font-family:system-ui,sans-serif;}
+/* lesson list & nav */
+.qLesson{display:flex;align-items:center;gap:12px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;font-size:14px;color:var(--text);text-align:start;}
+.qNum{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+[data-mode="dark"] .qNum{color:#1a1410;}
+.qNav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;}
+.qBtn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:9px 12px;font-family:inherit;font-weight:800;font-size:13px;}
+[data-mode="dark"] .qBtn{color:#1a1410;}
+.qWord{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;color:var(--text);}
+.qWordAr{font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;font-size:24px;direction:rtl;color:var(--accent);}
+.qIcon{width:44px;height:44px;border-radius:12px;display:block;margin:0 auto;}
+/* ===== 99 Names grid ===== */
+.asmaIntro{text-align:center;color:var(--accent);font-weight:800;font-size:14px;margin:4px 0 12px;}
+.asmaGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.asmaCard{position:relative;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.35);border-radius:16px;padding:16px 8px 12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.asmaNum{position:absolute;top:7px;left:9px;width:22px;height:22px;border-radius:50%;background:rgba(var(--acc-rgb),.16);color:var(--accent);font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.asmaAr{font-size:24px;line-height:1.6;color:var(--accent);direction:rtl;}
+.asmaEn{font-size:13px;font-weight:800;margin-top:2px;}
+.asmaAm{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5;}
+@media (max-width:340px){.asmaGrid{grid-template-columns:1fr;}}
+/* ===== AI chat ===== */
+.aiFab{position:fixed;bottom:78px;left:18px;width:58px;height:58px;border-radius:50%;background:#fff;border:2px solid var(--accent);padding:0;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:30;}
+.aiFab img{width:100%;height:100%;object-fit:cover;display:block;}
+.aiWrap{display:flex;flex-direction:column;gap:10px;}
+.aiNote{font-size:12px;color:var(--muted);background:var(--surface);border:1px solid rgba(var(--acc-rgb),.3);border-radius:12px;padding:9px 12px;line-height:1.5;}
+.aiList{display:flex;flex-direction:column;gap:10px;}
+.aiMsg{display:flex;}
+.aiMsg.user{justify-content:flex-end;}
+.aiBub{max-width:85%;padding:10px 13px;border-radius:14px;background:var(--surface);border:1px solid rgba(0,0,0,.06);font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.aiMsg.user .aiBub{background:var(--brand);color:#fff;border-color:transparent;}
+.aiForm{display:flex;gap:8px;position:sticky;bottom:0;background:var(--bg);padding:6px 0;}
+.aiForm input{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,.15);font-size:14px;font-family:inherit;background:#fff;color:var(--text);}
+[data-mode="dark"] .aiForm input{background:var(--surface);}
+.aiSend{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:0 16px;font-weight:800;font-family:inherit;}
+[data-mode="dark"] .aiSend{color:#1a1410;}
+.aiSend:disabled{opacity:.5;}
 </style>
 </head>
 <body>
@@ -461,6 +514,7 @@ const SOCIAL_LINKS = [
   {name:'ቴሌግራም', en:'Telegram', color:'#229ED9', ic:'✈️', url:'https://t.me/risala_eslamic_foundaion'},
   {name:'ቲክቶክ',   en:'TikTok',   color:'#111111', ic:'🎵', url:'https://vm.tiktok.com/ZS9FSm7BL2DPe-CDNh4/'},
   {name:'ዩቲዩብ',   en:'YouTube',  color:'#FF0000', ic:'▶️', url:'https://youtube.com/@risalaeslamicfoundtion?si=L7pkA6Z4Pyk1LruV'},
+  {name:'ኢንስታግራም', en:'Instagram', color:'#E1306C', ic:'📷', url:'https://www.instagram.com/risala_islamic_foundation?rpxt=MWVwODUydGp4emd4bA=='},
 ];
 const THEMES = [
   {k:'gold',mode:'dark',c:'#E8B93D',n:{am:'ወርቃማ ምሽት',en:'Golden Night'}},
@@ -500,7 +554,7 @@ const ASMA = [
 ["الوكيل","Al-Wakil","ተወካይ"],["القوي","Al-Qawiyy","ብርቱ"],["المتين","Al-Matin","ጽኑ"],["الولي","Al-Waliyy","ረዳት"],
 ["الحميد","Al-Hamid","ምስጉን"],["المحصي","Al-Muhsi","ቆጣሪ"],["المبدئ","Al-Mubdi","ጀማሪ"],["المعيد","Al-Mu'id","መላሽ"],
 ["المحيي","Al-Muhyi","ሕይወት ሰጪ"],["المميت","Al-Mumit","ገዳይ"],["الحي","Al-Hayy","ሕያው"],["القيوم","Al-Qayyum","ራሱን ችሎ ያለ"],
-["الواجد","Al-Wajid","አግኚ"],["الماجد","Al-Majid (2)","ክቡር"],["الواحد","Al-Wahid","አንድ"],["الصمد","As-Samad","ራሱን የቻለ"],
+["الواجد","Al-Wajid","አግኚ"],["الماجد","Al-Majid","ክቡር"],["الواحد","Al-Wahid","አንድ"],["الصمد","As-Samad","ራሱን የቻለ"],
 ["القادر","Al-Qadir","ቻይ"],["المقتدر","Al-Muqtadir","ኃያል ቻይ"],["المقدم","Al-Muqaddim","አስቀዳሚ"],["المؤخر","Al-Mu'akhkhir","አዘግይ"],
 ["الأول","Al-Awwal","መጀመሪያ"],["الآخر","Al-Akhir","መጨረሻ"],["الظاهر","Az-Zahir","ገላጭ"],["الباطن","Al-Batin","ስውር"],
 ["الوالي","Al-Wali","ገዢ"],["المتعالي","Al-Muta'ali","የላቀ"],["البر","Al-Barr","ደግ"],["التواب","At-Tawwab","ንስሓ ተቀባይ"],
@@ -995,7 +1049,7 @@ function applyTheme(){
 /* ================== ROUTER + RENDER ================== */
 let ROUTE={page:'home'}; let OPEN_CMT={}; let lastSig='';
 const appEl=document.getElementById('app');
-const WORSHIP_PAGES=['sub','asma','tasbih','duaLike','salawat'];
+const WORSHIP_PAGES=['sub','asma','tasbih','duaLike','salawat','tracker','qaida'];
 
 function feedKeyForPage(){
   if(ROUTE.page==='feature'){
@@ -1020,6 +1074,54 @@ function navBtn(k,icon,label,fn,extra){
   return `<button class="${extra||''} ${navActive(k)?'active':''}" onclick="${fn}"><span class="ni">${icon}</span><span class="navLabel">${label}</span></button>`;
 }
 
+
+/* ================== AI CHAT ================== */
+/* Paste your Appwrite Function URL here (see ai-function/README). Empty = AI not connected yet. */
+const AI_ENDPOINT = 'https://starter-function-4qdh.sfo.appwrite.run';
+const QAIDA_ICON_URI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZCNzAzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkI4NTAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iNTYiIGZpbGw9InVybCgjZykiLz4KPGNpcmNsZSBjeD0iMTI4IiBjeT0iODAiIHI9IjM0IiBmaWxsPSIjRkZGM0M0Ii8+CjxwYXRoIGQ9Ik0xMTggNjJhMzQgMzQgMCAxIDAgMzAgNTJhMjggMjggMCAxIDEtMzAtNTJ6IiBmaWxsPSIjRkZCNzAzIi8+CjxwYXRoIGQ9Ik00MCAxNTBxNDQtMjIgODggMHY2NHEtNDQtMjItODggMHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTIxNiAxNTBxLTQ0LTIyLTg4IDB2NjRxNDQtMjIgODggMHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTQwIDE1MHE0NC0yMiA4OCAwcTQ0LTIyIDg4IDB2NjRxLTQ0LTIyLTg4IDBxLTQ0LTIyLTg4IDB6IiBmaWxsPSJub25lIiBzdHJva2U9IiMwQjZFNEYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8bGluZSB4MT0iMTI4IiB5MT0iMTUwIiB4Mj0iMTI4IiB5Mj0iMjE0IiBzdHJva2U9IiMwQjZFNEYiIHN0cm9rZS13aWR0aD0iNiIvPgo8dGV4dCB4PSI4NCIgeT0iMTk2IiBmb250LXNpemU9IjM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMEI2RTRGIiBmb250LWZhbWlseT0iTm90byBOYXNraCBBcmFiaWMsIEFtaXJpLCBzZXJpZiI+2Kc8L3RleHQ+Cjx0ZXh0IHg9IjE3MiIgeT0iMTk2IiBmb250LXNpemU9IjM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMEI2RTRGIiBmb250LWZhbWlseT0iTm90byBOYXNraCBBcmFiaWMsIEFtaXJpLCBzZXJpZiI+2Kg8L3RleHQ+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTIiIHI9IjYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii44Ii8+PGNpcmNsZSBjeD0iMjA2IiBjeT0iNTAiIHI9IjUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii44Ii8+Cjwvc3ZnPg==';
+const AI_ICON_URI = 'data:image/jpeg;base64,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';
+let AI_HISTORY = [{role:'assistant', content:'ሰላምአለይኩም! ስለ ኢስላም ማንኛውንም ጥያቄ ይጠይቁ።'}];
+let AI_BUSY = false;
+function aiEsc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function openAI(){ ROUTE={page:'ai'}; render(); }
+function renderAI(){
+  const msgs = AI_HISTORY.map(m=>`<div class="aiMsg ${m.role==='user'?'user':'assistant'}"><div class="aiBub">${aiEsc(m.content)}</div></div>`).join('');
+  const typing = AI_BUSY ? `<div class="aiMsg assistant"><div class="aiBub">…</div></div>` : '';
+  return `<div class="aiWrap">
+    <div class="aiNote">⚠️ ይህ ረዳት ትምህርታዊ መረጃ ብቻ ይሰጣል። ፈትዋና ውሳኔ ለሚመለከታቸው ዓሊሞች ይተዉ።</div>
+    <div class="aiList" id="aiList">${msgs}${typing}</div>
+    <div class="aiForm">
+      <input id="aiIn" placeholder="ጥያቄዎን ይጻፉ…" onkeydown="if(event.key==='Enter')sendAI()" ${AI_BUSY?'disabled':''}>
+      <button class="aiSend" onclick="sendAI()" ${AI_BUSY?'disabled':''}>${t('send')||'ላክ'}</button>
+    </div>
+  </div>`;
+}
+async function sendAI(){
+  const inp = document.getElementById('aiIn');
+  const q = (inp && inp.value || '').trim();
+  if(!q || AI_BUSY) return;
+  AI_HISTORY.push({role:'user', content:q});
+  AI_BUSY = true; render();
+  let reply;
+  try{
+    if(!AI_ENDPOINT){
+      reply = 'የAI አገልግሎቱ ገና አልተገናኘም። እስከዚያው ድረስ በቴሌግራም ይጠይቁን።';
+    }else{
+      const r = await fetch(AI_ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({messages: AI_HISTORY.slice(-12).map(m=>({role:m.role, content:m.content}))})
+      });
+      const j = await r.json();
+      reply = j.reply || j.error || 'ስህተት ተከስቷል። እንደገና ይሞክሩ።';
+    }
+  }catch(e){
+    reply = 'ኢንተርኔት ያረጋግጡና እንደገና ይሞክሩ።';
+  }
+  AI_HISTORY.push({role:'assistant', content:reply});
+  AI_BUSY = false; render();
+}
+
 function render(){
   applyTheme();
   const sig=[ROUTE.page,ROUTE.key,ROUTE.tab,ROUTE.dtab,ROUTE.ttab,ROUTE.cat].join('|');
@@ -1033,6 +1135,9 @@ function render(){
   else if(ROUTE.page==='tasbih'){ title=t('tasbih'); body=renderTasbih(); }
   else if(ROUTE.page==='duaLike'){ title=ROUTE.cat==='adhkar'?t('adhkar'):t('dua'); body=renderDuaLike(); }
   else if(ROUTE.page==='salawat'){ title=t('salawat'); body=renderSalawatPage(); }
+  else if(ROUTE.page==='ai'){ title='ኢስላማዊ ጥያቄ 🤖'; body=renderAI(); }
+  else if(ROUTE.page==='tracker'){ title='የዕለታዊ ኢባዳ ✅'; body=renderTracker(); }
+  else if(ROUTE.page==='qaida'){ title='ቃኢዳ ኑራኒያ'; body=renderQaida(); }
   const showBack=ROUTE.page!=='home';
   const nf=k=>L(FEATURES.find(f=>f.key===k));
   const right=ROUTE.page==='tasbih'?`<button class="iconBtn" onclick="resetTasbihCurrent()">⟳</button>`:(DATA.admin?`<span class="iconBtn">👤</span>`:'');
@@ -1047,6 +1152,7 @@ function render(){
       </header>
       <main id="mainArea">${body}</main>
       ${(fk&&DATA.admin)?`<button class="fab" onclick="openAddPost()">+</button>`:''}
+      ${ROUTE.page!=='ai'?`<button class="aiFab" onclick="openAI()" aria-label="AI"><img src="${AI_ICON_URI}" alt="AI"></button>`:''}
       <nav class="bottom">
         ${navBtn('home','🏠',t('home'),'goHome()')}
         ${navBtn('news','📰',nf('news'),"openFeature('news')")}
@@ -1064,7 +1170,7 @@ function openFeature(key){
 }
 function goHome(){ ROUTE={page:'home'}; render(); }
 function goSettings(){ ROUTE={page:'settings'}; render(); }
-function goBack(){ if(WORSHIP_PAGES.includes(ROUTE.page)) ROUTE={page:'feature',key:'worship'}; else ROUTE={page:'home'}; render(); }
+function goBack(){ if(ROUTE.page==='qaida' && ROUTE.lesson!=null){ ROUTE={page:'qaida',lesson:null}; render(); return; } if(WORSHIP_PAGES.includes(ROUTE.page)) ROUTE={page:'feature',key:'worship'}; else ROUTE={page:'home'}; render(); }
 function setTab(k){ ROUTE.tab=k; render(); }
 
 /* ================== HOME ================== */
@@ -1277,6 +1383,8 @@ function renderWorship(){
       <div class="subCard" onclick="openDuaPage('adhkar')"><div class="ic">✨</div><div class="lbl">${t('adhkar')}</div></div>
       <div class="subCard" onclick="openTasbih()"><div class="ic">📿</div><div class="lbl">${t('tasbih')}</div></div>
       <div class="subCard" onclick="openSalawatPage()"><div class="ic">🕌</div><div class="lbl">${t('salawat')}</div></div>
+      <div class="subCard" onclick="openTracker()"><div class="ic">✅</div><div class="lbl">የዕለታዊ ኢባዳ</div></div>
+      <div class="subCard" onclick="openQaida()"><div class="ic"><img class="qIcon" src="${QAIDA_ICON_URI}" alt=""></div><div class="lbl">ቃኢዳ ኑራኒያ (ለህፃናት)</div></div>
     </div>
     <div class="bannerCard" onclick="openFeature('dawah')"><h3>DAWAH</h3><p>${t('dawahBannerTxt')}</p></div>
     <div class="recentHeader"><div class="sectionLabel" style="margin:0">${t('nearbyMosques')}</div>
@@ -1289,8 +1397,105 @@ function openTasbih(){ ROUTE={page:'tasbih',ttab:'subhanallah'}; render(); }
 function openDuaPage(cat){ ROUTE={page:'duaLike',cat,dtab:'morning'}; render(); }
 function openSalawatPage(){ ROUTE={page:'salawat'}; render(); }
 function setDtab(k){ ROUTE.dtab=k; render(); }
+/* ================== QAIDA NOORANIYAH ================== */
+const QAIDA_LETTERS=[["ا", "Alif"], ["ب", "Ba"], ["ت", "Ta"], ["ث", "Tha"], ["ج", "Jim"], ["ح", "Ha"], ["خ", "Kha"], ["د", "Dal"], ["ذ", "Dhal"], ["ر", "Ra"], ["ز", "Zay"], ["س", "Sin"], ["ش", "Shin"], ["ص", "Sad"], ["ض", "Dad"], ["ط", "Ta"], ["ظ", "Za"], ["ع", "Ayn"], ["غ", "Ghayn"], ["ف", "Fa"], ["ق", "Qaf"], ["ك", "Kaf"], ["ل", "Lam"], ["م", "Mim"], ["ن", "Nun"], ["ه", "Ha"], ["و", "Waw"], ["ي", "Ya"]];
+const QAIDA_LESSONS=[{"title": "1. حروف مع الفتحة", "desc": "ፊደላት ከ ፈትሓ (ኣ) ጋር", "type": "table", "forms": [["ـَ", "َ"]]}, {"title": "2. حروف مع الكسرة", "desc": "ፊደላት ከ ካስራ (ኢ) ጋር", "type": "table", "forms": [["ـِ", "ِ"]]}, {"title": "3. حروف مع الضمة", "desc": "ፊደላት ከ ዶማ (ኡ) ጋር", "type": "table", "forms": [["ـُ", "ُ"]]}, {"title": "4. التنوين", "desc": "ባለ ሁለት ነጥብ ድምፅ (ኧን፣ ኢን፣ ኡን)", "type": "table", "forms": [["ـً", "ً"], ["ـٍ", "ٍ"], ["ـٌ", "ٌ"]]}, {"title": "5. السكون", "desc": "ፊደሉ ድምፅ አልባ የሚሆንበት ምልክት", "type": "table", "forms": [["ـْ", "ْ"]]}, {"title": "6. الشدة", "desc": "ፊደሉ ሁለት ጊዜ እንዲነበብ", "type": "table", "forms": [["ـَّ", "َّ"], ["ـِّ", "ِّ"], ["ـُّ", "ُّ"]]}, {"title": "7. مد الألف", "desc": "ረዥም ኣ (ا)", "type": "table", "forms": [["ـَا", "َا"]]}, {"title": "8. مد الواو", "desc": "ረዥም ኡ (و)", "type": "table", "forms": [["ـُو", "ُو"]]}, {"title": "9. مد الياء", "desc": "ረዥም ኢ (ي)", "type": "table", "forms": [["ـِي", "ِي"]]}, {"title": "10. كلمات بسيطة", "desc": "ቃላት ማንበብ", "type": "list", "items": [["كَتَبَ", "ጻፈ"], ["قَلَمٌ", "እስክሪብቶ"], ["بَيْتٌ", "ቤት"], ["شَمْسٌ", "ፀሐይ"], ["قَمَرٌ", "ጨረቃ"], ["نُورٌ", "ብርሃን"], ["بَابٌ", "በር"], ["عِلْمٌ", "ዕውቀት"]]}, {"title": "11. قصار السور", "desc": "ቀላል ምዕራፍ ማንበብ", "type": "list", "items": [["بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "በአላህ ስም፣ አዛኙ አዛኙ"], ["قُلْ هُوَ اللَّهُ أَحَدٌ", "በል፡ እርሱ አላህ አንድ ነው"], ["اللَّهُ الصَّمَدُ", "አላህ ተፈላጊ ነው"], ["لَمْ يَلِدْ وَلَمْ يُولَدْ", "አልወለደም አልተወለደም"], ["وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ", "ማንም ተመጣጣኝ የለውም"]]}];
+const QAIDA_VOWELS=[{h:'\u064E',n:'فَتْحَة'},{h:'\u0650',n:'كَسْرَة'},{h:'\u064F',n:'ضَمَّة'}];
+function qaidaSpeak(txt){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(txt);
+    u.lang='ar-SA'; u.rate=0.7;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function openQaida(){ ROUTE={page:'qaida',lesson:null}; render(); }
+function openQaidaLesson(i){ ROUTE={page:'qaida',lesson:i}; render(); }
+function qaidaTable(forms){
+  const rows=QAIDA_LETTERS.map(([ch,name])=>{
+    const cells=forms.map(([,mark])=>{ const syl=ch+mark; return `<button class="qCell" onclick="qaidaSpeak('${syl}')">${syl}</button>`; }).join('');
+    return `<div class="qRow" style="grid-template-columns:70px ${forms.map(()=>'1fr').join(' ')}">
+      <button class="qName" onclick="qaidaSpeak('${ch}')"><b>${ch}</b>${name}</button>${cells}</div>`;
+  }).join('');
+  return rows;
+}
+function renderQaida(){
+  if(ROUTE.lesson==null){
+    const list=QAIDA_LESSONS.map((l,i)=>`<button class="qLesson" onclick="openQaidaLesson(${i})">
+        <span class="qNum">${i+1}</span><span style="flex:1;min-width:0"><span style="display:block;font-weight:800">${l.title.replace(/^\d+\.\s*/,'')}</span><span class="trackEn">${l.desc}</span></span><span>›</span></button>`).join('');
+    return `<div class="qIntro">ቃኢዳ ኑራኒያ ለህፃናት የአረብኛ ፊደላትን እና አነባበብን ከመሠረቱ የሚያስተምር መጽሐፍ ነው። ትምህርት ይምረጡ። ፊደልን ወይም ቃልን ሲነኩ ይሰማል።<br>ድምፁ የሚሰማው በስልኩ ላይ የአረብኛ ድምፅ ካለ ብቻ ነው።</div>${list}`;
+  }
+  const L=QAIDA_LESSONS[ROUTE.lesson];
+  const nav=`<div class="qNav">
+      ${ROUTE.lesson>0?`<button class="qBtn" onclick="openQaidaLesson(${ROUTE.lesson-1})">‹ ቀዳሚ</button>`:'<span></span>'}
+      <button class="qBtn" onclick="ROUTE={page:'qaida',lesson:null};render()">ዝርዝር</button>
+      ${ROUTE.lesson<QAIDA_LESSONS.length-1?`<button class="qBtn" onclick="openQaidaLesson(${ROUTE.lesson+1})">ቀጣይ ›</button>`:'<span></span>'}
+    </div>`;
+  let body='';
+  if(L.type==='table'){
+    body=`<div class="qIntro">${L.desc}</div>`+qaidaTable(L.forms);
+  }else{
+    body=`<div class="qIntro">${L.desc}</div>`+L.items.map(([ar,am])=>`<button class="qWord" onclick="qaidaSpeak('${ar.replace(/'/g,"\\'")}')">
+        <span class="qWordAr">${ar}</span><span class="trackEn" style="font-size:12px">${am}</span></button>`).join('');
+  }
+  return nav+body+nav;
+}
+
+/* ================== DAILY WORSHIP TRACKER ================== */
+const TRACK_ITEMS=[
+  {k:'fajr',am:'ፈጅር ሶላት',en:'Fajr prayer'},
+  {k:'dhuhr',am:'ዙህር ሶላት',en:'Dhuhr prayer'},
+  {k:'asr',am:'ዓስር ሶላት',en:'Asr prayer'},
+  {k:'maghrib',am:'መግሪብ ሶላት',en:'Maghrib prayer'},
+  {k:'isha',am:'ዒሻእ ሶላት',en:'Isha prayer'},
+  {k:'quran',am:'ቁርኣን ማንበብ',en:'Quran reading'},
+  {k:'morning',am:'የጠዋት አዝካር',en:'Morning adhkar'},
+  {k:'evening',am:'የምሽት አዝካር',en:'Evening adhkar'},
+  {k:'charity',am:'ሰደቃ መስጠት',en:'Charity'}
+];
+function openTracker(){ ROUTE={page:'tracker'}; render(); }
+function trackDayKey(d){
+  d=d||new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function trackDay(k){ return (DATA.tracker&&DATA.tracker[k])||{}; }
+function toggleTrack(item){
+  DATA.tracker=DATA.tracker||{};
+  const k=trackDayKey();
+  const day=DATA.tracker[k]||{};
+  day[item]=!day[item];
+  DATA.tracker[k]=day;
+  const keys=Object.keys(DATA.tracker).sort();
+  while(keys.length>60){ delete DATA.tracker[keys.shift()]; }
+  saveData(DATA); render();
+}
+function renderTracker(){
+  const today=trackDay(trackDayKey());
+  const done=TRACK_ITEMS.filter(i=>today[i.k]).length;
+  const pct=Math.round(done/TRACK_ITEMS.length*100);
+  let weekDone=0, weekTotal=0;
+  for(let i=0;i<7;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const day=trackDay(trackDayKey(d));
+    weekDone+=TRACK_ITEMS.filter(x=>day[x.k]).length;
+    weekTotal+=TRACK_ITEMS.length;
+  }
+  const wpct=Math.round(weekDone/weekTotal*100);
+  const rows=TRACK_ITEMS.map(i=>`<button class="trackRow ${today[i.k]?'done':''}" onclick="toggleTrack('${i.k}')">
+      <span class="trackBox">${today[i.k]?'✓':''}</span>
+      <span style="flex:1;min-width:0"><span style="display:block">${i.am}</span><span class="trackEn">${i.en}</span></span>
+    </button>`).join('');
+  return `<div class="dhikrCard">
+      <div class="sectionLabel" style="margin:0">ዛሬ · ${done} / ${TRACK_ITEMS.length}</div>
+      <div class="progBar"><div class="progFill" style="width:${pct}%"></div></div>
+      <div class="trackNote">ባለፉት 7 ቀናት: ${wpct}%</div>
+    </div>${rows}
+    <div class="trackNote" style="margin-top:10px">መረጃው በዚህ መሣሪያ ላይ ብቻ ይቀመጣል።</div>`;
+}
+
 function renderAsma(){
-  return ASMA.map((a,i)=>`<div class="post"><h4>${i+1}. ${a[0]} <span style="color:var(--muted);font-weight:400;font-size:12px">(${a[1]})</span></h4><p>${a[2]}</p></div>`).join('');
+  return `<div class="asmaIntro">ለአላህ 99 ውብ ስሞች · 99 Beautiful Names</div><div class="asmaGrid">`+ASMA.map((a,i)=>`<div class="asmaCard"><span class="asmaNum">${i+1}</span><div class="asmaAr">${a[0]}</div><div class="asmaEn">${a[1]}</div><div class="asmaAm">${a[2]}</div></div>`).join('')+`</div>`;
 }
 function renderDuaLike(){
   const adh=ROUTE.cat==='adhkar'; const tabs=adh?ADHKAR_TABS:DUA_TABS; const src=adh?ADHKAR:DUAS;
