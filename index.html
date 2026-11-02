@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ሪሳላ ኢስላማዊ ፋውንዴሽን — ኢስላማዊ ትምህርቶች፣ የሶላት ሰዓት፣ ቂብላ፣ ዱዓ፣ ተስቢህ እና ሌሎችም።">
+<meta name="theme-color" content="#0B6E4F">
+<meta name="application-name" content="ሪሳላ">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ሪሳላ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ሪሳላ ኢስላማዊ ፋውንዴሽን">
+<meta property="og:description" content="ኢስላማዊ ትምህርቶች፣ የሶላት ሰዓት፣ ቂብላ፣ ዱዓ፣ ተስቢህ እና ሌሎችም።">
+<meta property="og:image" content="https://alinesru176-design.github.io/Risala-Islamic-Website-/icon-512.png">
+<meta name="google-site-verification" content="NwZR4lZ2STjXwJoxmV3OEv3YBOG4AnvGfNY4pzo6svM" />
+<link rel="canonical" href="https://alinesru176-design.github.io/Risala-Islamic-Website-/">
+<meta property="og:url" content="https://alinesru176-design.github.io/Risala-Islamic-Website-/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;800&display=swap" rel="stylesheet">
+<title>ሪሳላ ኢስላማዊ ፋውንዴሽን</title>
+<style>
+
+:root{
+  --brand:#0B6E4F;
+  --brand-dark:#074A35;
+  --accent:#C99A2E;
+  --bg:#F7F5EF;
+  --surface:#FFFFFF;
+  --text:#1B2420;
+  --muted:#6B7770;
+  --danger:#B03A2E;
+  --radius:16px;
+}
+[data-theme="teal"]{ --brand:#0E5C6B; --brand-dark:#083E48; --accent:#3FB6A8; }
+[data-theme="maroon"]{ --brand:#6B1E2B; --brand-dark:#4A121C; --accent:#C99A2E; }
+[data-theme="navy"]{ --brand:#152A54; --brand-dark:#0D1B38; --accent:#9FB4D6; }
+[data-theme="gold"]{ --brand:#8a6a1a; --brand-dark:#000000; --accent:#E8B93D; --bg:#0d0b08; --surface:#171310; --text:#F3EAD6; --muted:#a89a7c; }
+[data-mode="dark"] header{background:#000;border-bottom:1px solid rgba(var(--acc-rgb),.25);box-shadow:none;}
+[data-mode="dark"] header .backBtn,[data-mode="dark"] header .iconBtn{background:rgba(var(--acc-rgb),.12);color:var(--accent);}
+[data-mode="dark"] header .appTitle{color:var(--accent);}
+[data-mode="dark"] nav.bottom{background:#000;border-top:1px solid rgba(var(--acc-rgb),.18);}
+[data-mode="dark"] nav.bottom button{color:#8a8272;}
+[data-mode="dark"] nav.bottom button.active{color:var(--accent);}
+[data-mode="dark"] .card,[data-mode="dark"] .post,[data-mode="dark"] .sectionIntro,[data-mode="dark"] .contactCard,
+[data-mode="dark"] .tab,[data-mode="dark"] .sheet,[data-mode="dark"] .settingsRow,[data-mode="dark"] .prayerBox,
+[data-mode="dark"] .subCard{ background:var(--surface); border-color:rgba(var(--acc-rgb),.22); color:var(--text); }
+[data-mode="dark"] .settingsRow .sic{background:rgba(var(--acc-rgb),.12);color:var(--accent);}
+[data-mode="dark"] .hero{background:linear-gradient(135deg,#171310,#000);}
+[data-mode="dark"] .field input,[data-mode="dark"] .field textarea,[data-mode="dark"] .field select{background:#0d0b08;color:var(--text);border-color:rgba(var(--acc-rgb),.3);}
+[data-mode="dark"] .empty,[data-mode="dark"] .sectionIntro p{color:var(--muted);}
+[data-mode="dark"] .settingsGroupTitle{color:var(--accent);}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:'Noto Sans Ethiopic', system-ui, -apple-system, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-tap-highlight-color:transparent;
+}
+#app{display:flex;flex-direction:column;min-height:100vh;}
+
+/* Header */
+header{
+  background:var(--brand);
+  color:#fff;
+  padding:16px 16px 14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  position:sticky;top:0;z-index:20;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+header .backBtn{
+  width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;border:none;color:#fff;
+}
+header .titleWrap{flex:1;min-width:0;}
+header .appTitle{font-size:18px;font-weight:800;margin:0;}
+header .subTitle{font-size:12px;opacity:.85;margin:0;}
+header .iconBtn{
+  width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;font-size:17px;border:none;color:#fff;flex:none;
+}
+.headerLogo{width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;background:#fff;padding:2px;}
+nav.bottom button .navLabel{display:block;max-width:56px;margin:0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+nav.bottom button.navHighlight{color:var(--accent);font-weight:800;}
+nav.bottom button.navHighlight .ni{font-size:21px;}
+
+main{flex:1;padding:16px 16px 90px;max-width:640px;margin:0 auto;width:100%;}
+
+/* Home grid */
+.hero{
+  background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+  border-radius:var(--radius);
+  color:#fff;padding:22px 18px;margin-bottom:18px;position:relative;overflow:hidden;text-align:center;
+}
+.hero .crescent{position:absolute;right:-10px;top:-18px;font-size:90px;opacity:.15;}
+.heroLogo{width:68px;height:68px;border-radius:16px;object-fit:cover;background:#fff;padding:5px;box-shadow:0 4px 12px rgba(0,0,0,.3);margin-bottom:10px;}
+.hero h2{margin:0 0 6px;font-size:20px;font-weight:800;}
+.hero p{margin:0;font-size:13.5px;opacity:.9;line-height:1.5;}
+
+.grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+}
+.card{
+  background:var(--surface);border-radius:var(--radius);padding:16px 12px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+  border:1px solid rgba(0,0,0,.05);
+  box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.card .ic{
+  width:42px;height:42px;border-radius:12px;background:rgba(11,110,79,.1);
+  display:flex;align-items:center;justify-content:center;font-size:21px;
+}
+.card .lbl{font-size:13.5px;font-weight:700;line-height:1.35;}
+
+/* Section header */
+.sectionIntro{
+  background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:14px;
+  border:1px solid rgba(0,0,0,.05);
+}
+.sectionIntro h3{margin:0 0 6px;font-size:16px;}
+.sectionIntro p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+.tabs{display:flex;gap:8px;margin-bottom:14px;}
+.tab{
+  flex:1;text-align:center;padding:10px;border-radius:12px;background:var(--surface);
+  border:1px solid rgba(0,0,0,.08);font-weight:700;font-size:13.5px;color:var(--muted);
+}
+.tab.active{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* Feed */
+.post{
+  background:var(--surface);border-radius:var(--radius);padding:14px;margin-bottom:12px;
+  border:1px solid rgba(0,0,0,.05);
+}
+.post img{width:100%;border-radius:10px;margin:8px 0;display:block;}
+.post h4{margin:0 0 6px;font-size:15px;}
+.post p{margin:0;font-size:13.5px;line-height:1.6;white-space:pre-wrap;}
+.post .meta{font-size:11.5px;color:var(--muted);margin-top:8px;}
+.post .linkBtn,.post audio,.post iframe{margin-top:10px;width:100%;}
+.post .linkBtn{
+  display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+  padding:9px 14px;border-radius:10px;font-size:13px;font-weight:700;
+}
+.post iframe{height:200px;border:none;border-radius:10px;}
+.postActions{display:flex;gap:8px;margin-top:10px;}
+.postActions button{
+  border:none;background:rgba(0,0,0,.06);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--text);
+}
+.empty{text-align:center;color:var(--muted);font-size:13.5px;padding:30px 10px;}
+
+/* Floating add button */
+.fab{
+  position:fixed;bottom:78px;right:18px;width:54px;height:54px;border-radius:50%;
+  background:var(--accent);color:#fff;border:none;font-size:26px;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  z-index:30;
+}
+
+/* Bottom nav */
+nav.bottom{
+  position:fixed;bottom:0;left:0;right:0;background:var(--surface);
+  display:flex;border-top:1px solid rgba(0,0,0,.07);z-index:20;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+nav.bottom button{
+  flex:1;border:none;background:none;padding:10px 4px 8px;display:flex;flex-direction:column;
+  align-items:center;gap:3px;color:var(--muted);font-size:11px;font-weight:700;
+}
+nav.bottom button.active{color:var(--brand);}
+nav.bottom .ni{font-size:19px;}
+
+/* Modal */
+.overlay{
+  position:fixed;inset:0;background:rgba(10,15,12,.5);z-index:50;display:flex;align-items:flex-end;
+}
+.sheet{
+  background:var(--surface);border-radius:20px 20px 0 0;padding:18px;width:100%;max-height:88vh;overflow:auto;
+}
+.sheet h3{margin:0 0 14px;font-size:17px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:5px;font-weight:700;}
+.field input[type=text],.field input[type=url],.field textarea,.field select{
+  width:100%;padding:11px;border-radius:10px;border:1px solid rgba(0,0,0,.15);font-size:14px;
+  font-family:inherit;background:#fff;color:var(--text);
+}
+.field textarea{min-height:80px;resize:vertical;}
+.row2{display:flex;gap:10px;}
+.row2 .field{flex:1;}
+.btnRow{display:flex;gap:10px;margin-top:6px;}
+.btn{
+  flex:1;padding:12px;border-radius:12px;border:none;font-weight:800;font-size:14px;
+}
+.btn.primary{background:var(--brand);color:#fff;}
+.btn.ghost{background:rgba(0,0,0,.06);color:var(--text);}
+.closeX{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.06);border:none;width:30px;height:30px;border-radius:50%;font-size:16px;}
+
+.themeRow{display:flex;gap:10px;margin:10px 0 4px;}
+.themeDot{width:38px;height:38px;border-radius:50%;border:3px solid transparent;}
+.themeDot.active{border-color:var(--text);}
+
+.socialBtn{
+  display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:14px;padding:14px;
+  margin-bottom:10px;border:1px solid rgba(0,0,0,.06);text-decoration:none;color:var(--text);font-weight:700;
+}
+.socialBtn .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;}
+
+.contactCard{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:14px;border:1px solid rgba(0,0,0,.05);}
+.contactCard .row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:14px;}
+.contactCard .row:last-child{border-bottom:none;}
+.contactCard .row .k{width:26px;flex:none;}
+
+/* Worship page components */
+.actionBtnsRow{display:flex;gap:10px;margin-bottom:16px;}
+.actionBtn{flex:1;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:14px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11.5px;font-weight:800;text-align:center;}
+[data-mode="dark"] .actionBtn{color:#1a1410;}
+.actionBtn .ic{font-size:20px;}
+
+.prayerBox{border:1px solid var(--accent);border-radius:16px;padding:14px 10px;margin-bottom:18px;}
+.prayerBox h4{text-align:center;color:var(--accent);margin:0 0 12px;font-size:15px;}
+.prayerRow{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;}
+.prayerCell{flex:none;min-width:78px;border:1px solid var(--accent);border-radius:10px;padding:10px 8px;text-align:center;}
+.prayerCell .pn{font-size:11.5px;color:var(--muted);margin-bottom:4px;}
+.prayerCell .pt{font-weight:800;font-size:13px;}
+.editTimesBtn{display:block;margin:10px auto 0;background:none;border:none;color:var(--accent);font-size:12px;font-weight:700;}
+
+.subGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+.subCard{background:var(--surface);border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:14px 8px;text-align:center;}
+.subCard .ic{font-size:24px;margin-bottom:8px;}
+.subCard .lbl{font-size:12px;font-weight:700;}
+
+.sectionLabel{color:var(--accent);font-weight:800;font-size:14px;margin:4px 0 10px;}
+
+.practiceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;}
+.practiceGrid .subCard .ic{font-size:22px;}
+.practiceGrid .subCard .lbl{font-size:11px;}
+
+.bannerCard{border:1px solid var(--accent);border-radius:16px;padding:20px 16px;margin-bottom:18px;background:linear-gradient(135deg,rgba(0,0,0,.75),rgba(0,0,0,.45));color:#fff;text-align:center;}
+.bannerCard h3{margin:0 0 4px;font-size:20px;letter-spacing:1px;color:var(--accent);}
+.bannerCard p{margin:0;font-size:12.5px;opacity:.85;}
+
+.recentHeader{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.recentHeader .rBtn{background:none;border:1px solid var(--accent);color:var(--accent);border-radius:20px;padding:6px 12px;font-size:12px;font-weight:700;}
+.recentHeader .refresh{background:none;border:none;color:var(--muted);font-size:16px;}
+
+.tasbihWrap{text-align:center;padding:20px 0 6px;}
+.tasbihCount{font-size:52px;font-weight:800;color:var(--accent);margin-bottom:16px;}
+.tasbihBtn{width:120px;height:120px;border-radius:50%;background:var(--accent);border:none;color:#1a1410;font-size:15px;font-weight:800;}
+.tasbihReset{display:block;margin:16px auto 0;background:none;border:none;color:var(--muted);font-size:13px;font-weight:700;}
+
+/* Settings grouped rows */
+.settingsGroupTitle{font-size:12.5px;color:var(--muted);font-weight:800;margin:18px 4px 8px;}
+.settingsGroupTitle:first-child{margin-top:2px;}
+.settingsRow{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:14px;padding:13px 14px;margin-bottom:8px;border:1px solid rgba(0,0,0,.05);}
+.settingsRow .sic{width:38px;height:38px;border-radius:50%;background:rgba(var(--acc-rgb),.15);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none;color:var(--accent);}
+.settingsRow .stext{flex:1;min-width:0;}
+.settingsRow .stext .st1{font-weight:700;font-size:14px;}
+.settingsRow .stext .st2{font-size:12px;color:var(--muted);margin-top:2px;}
+.settingsRow .chev{color:var(--muted);font-size:16px;}
+.settingsRow.danger .sic{background:rgba(176,58,46,.15);color:var(--danger);}
+.settingsRow.danger .st1{color:var(--danger);}
+
+/* Dhikr / Dua / Salawat cards */
+.dhikrCard{background:var(--surface);border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:16px;margin-bottom:14px;}
+.dhikrBadge{display:inline-block;background:rgba(var(--acc-rgb),.15);color:var(--accent);font-size:11px;font-weight:800;padding:5px 10px;border-radius:20px;margin-bottom:12px;}
+.dhikrHead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:8px;}
+.dhikrTitle{font-weight:800;font-size:15px;color:var(--accent);}
+.dhikrSub{font-size:12px;color:var(--muted);margin-top:2px;}
+.dhikrRec{font-size:11px;color:var(--muted);white-space:nowrap;}
+.dhikrAr{font-size:22px;line-height:1.9;text-align:center;margin:10px 0;direction:rtl;}
+.dhikrTranslit{color:var(--accent);font-style:italic;font-size:13px;margin-bottom:8px;line-height:1.5;}
+.dhikrEn{font-size:13.5px;margin-bottom:8px;line-height:1.6;}
+.dhikrAm{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:8px;}
+.dhikrSrc{font-size:11.5px;color:var(--muted);}
+.counterRow{display:flex;gap:10px;margin-top:12px;}
+.resetBtn{width:42px;height:42px;border-radius:10px;background:rgba(0,0,0,.06);border:none;font-size:16px;color:var(--muted);flex:none;}
+.countBtn{flex:1;background:transparent;border:1px solid var(--accent);color:var(--accent);border-radius:10px;font-weight:800;font-size:16px;}
+[data-mode="dark"] .resetBtn{background:rgba(var(--acc-rgb),.1);color:var(--accent);}
+[data-mode="dark"] .dhikrCard{background:var(--surface);border-color:rgba(var(--acc-rgb),.2);}
+
+.tasbihAr{font-size:34px;color:var(--accent);text-align:center;margin-top:10px;direction:rtl;}
+.tasbihWord{font-size:22px;font-weight:800;text-align:center;margin-top:6px;}
+.tasbihMean{text-align:center;color:var(--muted);font-size:13px;margin-bottom:10px;}
+.tasbihRing{width:200px;height:200px;border-radius:50%;border:3px solid rgba(0,0,0,.12);margin:14px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+[data-mode="dark"] .tasbihRing{border-color:rgba(255,255,255,.12);}
+.tasbihRing #tasbihNum{font-size:46px;font-weight:800;color:var(--text);}
+.tasbihTarget{font-size:14px;color:var(--muted);}
+.tasbihBtn{width:130px;height:130px;border-radius:50%;background:transparent;border:3px solid var(--accent);color:var(--accent);font-size:38px;display:block;margin:10px auto 0;}
+
+/* ================= v2 ================= */
+:root{ --acc-rgb:201,154,46; --tile:#1E88E5; }
+[data-theme="teal"]{ --acc-rgb:63,182,168; --bg:#F0F7F8; }
+[data-theme="maroon"]{ --acc-rgb:201,154,46; --bg:#FAF2F3; }
+[data-theme="navy"]{ --acc-rgb:159,180,214; --bg:#F1F4FA; }
+[data-theme="royal"]{ --brand:#1E5BC6; --brand-dark:#123B8A; --accent:#F2B632; --acc-rgb:242,182,50; --bg:#F1F5FC; }
+[data-theme="purple"]{ --brand:#5B3FA8; --brand-dark:#3B2778; --accent:#E0A526; --acc-rgb:224,165,38; --bg:#F5F2FB; }
+[data-theme="sunset"]{ --brand:#C4571A; --brand-dark:#8E3B0F; --accent:#F2B632; --acc-rgb:242,182,50; --bg:#FBF4EE; }
+[data-theme="rose"]{ --brand:#B0305F; --brand-dark:#7A1E40; --accent:#E6A23C; --acc-rgb:230,162,60; --bg:#FBF1F4; }
+[data-theme="brown"]{ --brand:#6B4A2B; --brand-dark:#46301B; --accent:#D4A24C; --acc-rgb:212,162,76; --bg:#F8F3EC; }
+[data-theme="sky"]{ --brand:#0A8FBF; --brand-dark:#06617F; --accent:#FFB703; --acc-rgb:255,183,3; --bg:#EFF8FC; }
+[data-theme="gold"]{ --acc-rgb:232,185,61; }
+[data-theme="nightblue"]{ --brand:#2F6FDE; --brand-dark:#000000; --accent:#6EA8FF; --acc-rgb:110,168,255; --bg:#0a0e17; --surface:#131a29; --text:#E8EEF9; --muted:#93a1bd; }
+[data-theme="emeraldnight"]{ --brand:#0B6E4F; --brand-dark:#000000; --accent:#3DDC97; --acc-rgb:61,220,151; --bg:#08110d; --surface:#10201a; --text:#E6F5EE; --muted:#8fb0a2; }
+[data-theme="purplenight"]{ --brand:#5B3FA8; --brand-dark:#000000; --accent:#C6A0FF; --acc-rgb:198,160,255; --bg:#0f0b17; --surface:#1a1326; --text:#EEE8F9; --muted:#a397bd; }
+
+body{overflow-x:hidden;}
+.shell{flex:1;display:flex;flex-direction:column;min-height:100vh;}
+header{background:linear-gradient(135deg,var(--brand),var(--brand-dark));}
+
+/* splash */
+#splash{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 32%,#1a4a9a 0%,#0b1f47 58%,#050b1c 100%);color:#fff;transition:opacity .6s ease,visibility .6s;}
+#splash.hide{opacity:0;visibility:hidden;}
+#splash img{width:132px;height:132px;border-radius:32px;background:#fff;padding:10px;object-fit:cover;
+  animation:pop .8s cubic-bezier(.2,.9,.3,1.3) both,pulse 1.8s .8s ease-out infinite;}
+#splash h1{margin:24px 24px 6px;font-size:22px;font-weight:800;text-align:center;animation:fadeUp .8s .3s both;}
+#splash p{margin:0;opacity:.85;font-size:15px;color:#F2B632;font-weight:700;animation:fadeUp .8s .5s both;}
+#splash .dots{margin-top:30px;display:flex;gap:8px;}
+#splash .dots i{width:8px;height:8px;border-radius:50%;background:#F2B632;animation:bounce 1s infinite;}
+#splash .dots i:nth-child(2){animation-delay:.15s;} #splash .dots i:nth-child(3){animation-delay:.3s;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,182,50,.55);}100%{box-shadow:0 0 0 36px rgba(242,182,50,0);}}
+@keyframes pop{0%{transform:scale(.4);opacity:0;}100%{transform:scale(1);opacity:1;}}
+@keyframes fadeUp{0%{transform:translateY(14px);opacity:0;}100%{transform:none;opacity:1;}}
+@keyframes bounce{0%,80%,100%{transform:scale(.6);opacity:.5;}40%{transform:scale(1);opacity:1;}}
+
+/* hero + cards */
+.hero{background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27%3E%3Cg fill=%27none%27 stroke=%27white%27 stroke-opacity=%27.13%27 stroke-width=%271%27%3E%3Cpath d=%27M30 4l6.5 15.7L52 26l-15.5 6.3L30 48l-6.5-15.7L8 26l15.5-6.3z%27/%3E%3Ccircle cx=%2730%27 cy=%2726%27 r=%2722%27/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(135deg,var(--brand),var(--brand-dark));background-size:60px 60px,auto;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);animation:fadeUp .5s both;}
+[data-mode="dark"] .hero{background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27%3E%3Cg fill=%27none%27 stroke=%27white%27 stroke-opacity=%27.13%27 stroke-width=%271%27%3E%3Cpath d=%27M30 4l6.5 15.7L52 26l-15.5 6.3L30 48l-6.5-15.7L8 26l15.5-6.3z%27/%3E%3Ccircle cx=%2730%27 cy=%2726%27 r=%2722%27/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(135deg,var(--surface),#000);background-size:60px 60px,auto;border:1px solid rgba(var(--acc-rgb),.3);}
+.greet{font-size:14px;margin:6px 0 2px;color:#FFD86B;font-weight:800;}
+.heroChips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px;}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700;}
+.card{animation:fadeUp .5s both;transition:transform .15s;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.card:active{transform:scale(.96);}
+.card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:74px;height:74px;border-radius:50%;background:var(--tile);opacity:.08;}
+.card .ic{background:transparent !important;position:relative;z-index:0;width:48px;height:48px;border-radius:15px;font-size:24px;}
+.card .ic::before{content:'';position:absolute;inset:0;border-radius:inherit;background:var(--tile);opacity:.2;z-index:-1;}
+nav.bottom{box-shadow:0 -4px 16px rgba(0,0,0,.08);}
+nav.bottom button .ni{transition:transform .2s;}
+nav.bottom button.active .ni{transform:translateY(-2px) scale(1.15);}
+
+/* inputs */
+.field input:not([type=file]):not([type=checkbox]){width:100%;padding:11px;border-radius:10px;border:1px solid rgba(0,0,0,.15);font-size:14px;font-family:inherit;background:#fff;color:#1B2420;}
+[data-mode="dark"] .field input:not([type=file]){background:var(--bg);color:var(--text);border-color:rgba(var(--acc-rgb),.3);}
+.field input[type=file]{width:100%;font-size:13px;color:var(--text);}
+.hint{font-size:12px;color:var(--muted);margin:2px 0 10px;}
+
+/* media in posts */
+.post video{width:100%;border-radius:10px;margin:8px 0;background:#000;max-height:340px;display:block;}
+
+/* reactions + comments */
+.react{display:flex;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(var(--acc-rgb),.2);}
+.rb{flex:1;background:rgba(0,0,0,.05);border:1px solid transparent;border-radius:10px;padding:8px 6px;font-size:13px;font-weight:700;color:var(--text);font-family:inherit;}
+[data-mode="dark"] .rb{background:rgba(255,255,255,.06);}
+.rb.on{background:rgba(var(--acc-rgb),.18);border-color:var(--accent);color:var(--accent);}
+.cmts{margin-top:10px;}
+.cmt{background:rgba(0,0,0,.045);border-radius:10px;padding:8px 10px;margin-bottom:6px;font-size:13px;line-height:1.5;}
+[data-mode="dark"] .cmt{background:rgba(255,255,255,.06);}
+.cmt b{display:block;font-size:12px;color:var(--accent);}
+.cmt small{color:var(--muted);font-size:11px;}
+.cmt .del{float:right;background:none;border:none;color:var(--danger);font-size:12px;}
+.cmtForm{display:flex;flex-direction:column;gap:6px;margin-top:8px;}
+.cmtForm .row{display:flex;gap:6px;}
+.cmtForm input{padding:9px;border-radius:9px;border:1px solid rgba(0,0,0,.15);font-family:inherit;font-size:13px;background:#fff;color:#1B2420;width:100%;}
+[data-mode="dark"] .cmtForm input{background:var(--bg);color:var(--text);border-color:rgba(var(--acc-rgb),.3);}
+.cmtForm button{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:0 14px;font-weight:800;font-family:inherit;}
+[data-mode="dark"] .cmtForm button{background:var(--accent);color:#1a1410;}
+
+/* toast */
+.toast{position:fixed;left:0;right:0;margin:0 auto;width:fit-content;bottom:92px;background:#111;color:#fff;padding:11px 16px;border-radius:14px;
+  font-size:13px;font-weight:700;z-index:300;max-width:88%;box-shadow:0 6px 20px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);animation:fadeUp .3s both;}
+
+/* theme + language pickers */
+.themeGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 6px;}
+.themeItem{text-align:center;font-size:10.5px;color:var(--muted);font-weight:700;}
+.themeItem .dot{width:44px;height:44px;border-radius:50%;margin:0 auto 4px;border:3px solid transparent;box-shadow:0 2px 6px rgba(0,0,0,.25);}
+.themeItem.active .dot{border-color:var(--text);}
+.langRow{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:12px;margin-bottom:8px;background:rgba(0,0,0,.05);font-weight:700;}
+[data-mode="dark"] .langRow{background:rgba(255,255,255,.06);}
+.langRow.active{background:var(--brand);color:#fff;}
+[data-mode="dark"] .langRow.active{background:var(--accent);color:#1a1410;}
+
+/* RTL */
+[dir="rtl"] .backBtn,[dir="rtl"] .chev{transform:scaleX(-1);}
+[dir="rtl"] .fab{right:auto;left:18px;}
+[dir="rtl"] .closeX{left:auto;right:14px;}
+[dir="rtl"] .cmt .del{float:left;}
+
+/* ===== Website additions ===== */
+@media (min-width:700px){
+  body{background:#0b0b0b;}
+  #app{max-width:640px;margin:0 auto;box-shadow:0 0 40px rgba(0,0,0,.5);background:var(--bg);}
+  nav.bottom{left:50%;right:auto;transform:translateX(-50%);width:100%;max-width:640px;}
+  .fab{right:calc(50% - 320px + 18px);}
+}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+.compassWrap{position:relative;width:200px;height:200px;margin:0 auto;}
+.compassWrap .ring{position:absolute;inset:0;transition:transform .15s linear;}
+.compassWrap .kaaba{position:absolute;inset:0;transition:transform .15s linear;}
+.compassHint{font-size:12px;color:var(--muted);margin-top:8px;}
+
+/* ===== Install-app banner ===== */
+#installBar{position:fixed;left:10px;right:10px;bottom:calc(74px + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;z-index:40;
+  background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:16px;padding:12px;box-shadow:0 8px 28px rgba(0,0,0,.35);
+  display:flex;align-items:center;gap:10px;animation:fadeUp .35s both;}
+#installBar img{width:44px;height:44px;border-radius:10px;flex:none;object-fit:cover;}
+#installBar .it{flex:1;min-width:0;}
+#installBar .it b{display:block;font-size:14px;}
+#installBar .it span{display:block;font-size:12px;color:var(--muted);}
+#installBar .ib{display:flex;flex-direction:column;gap:6px;flex:none;}
+#installBar button,#installBar a{border:none;border-radius:10px;padding:9px 12px;font:inherit;font-size:13px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;}
+#installBar .go{background:var(--accent);color:#fff;}
+#installBar .no{background:transparent;color:var(--muted);padding:2px 6px;font-size:12px;font-weight:600;}
+
+/* ===== Daily worship tracker ===== */
+.trackRow{display:flex;align-items:center;gap:12px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;font-size:14px;font-weight:700;color:var(--text);text-align:start;}
+.trackRow.done{border-color:var(--accent);}
+.trackBox{width:26px;height:26px;border-radius:8px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex:none;}
+.trackRow.done .trackBox{background:var(--accent);}
+.trackEn{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;}
+.progBar{height:10px;border-radius:99px;background:rgba(var(--acc-rgb),.15);overflow:hidden;margin:8px 0;}
+.progFill{height:100%;background:var(--accent);border-radius:99px;transition:width .3s;}
+.trackNote{font-size:12px;color:var(--muted);}
+/* ===== Qaida Nooraniyah ===== */
+.qIntro{background:var(--surface);border:1px solid rgba(var(--acc-rgb),.3);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.7;margin-bottom:12px;}
+.qRow{display:grid;grid-template-columns:70px 1fr 1fr 1fr;gap:6px;align-items:stretch;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.2);border-radius:14px;padding:8px;margin-bottom:8px;}
+.qName{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;color:var(--muted);font-weight:700;background:none;border:none;font-family:inherit;}
+.qName b{font-size:26px;color:var(--accent);font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;line-height:1.3;}
+.qCell{background:rgba(var(--acc-rgb),.08);border:1px solid rgba(var(--acc-rgb),.25);border-radius:12px;padding:10px 0;font-size:30px;line-height:1.4;color:var(--text);font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;direction:rtl;}
+.qCell:active,.qName:active{transform:scale(.95);}
+.qHint{font-size:10.5px;color:var(--muted);text-align:center;margin-top:2px;font-family:system-ui,sans-serif;}
+/* lesson list & nav */
+.qLesson{display:flex;align-items:center;gap:12px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;font-size:14px;color:var(--text);text-align:start;}
+.qNum{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+[data-mode="dark"] .qNum{color:#1a1410;}
+.qNav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;}
+.qBtn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:9px 12px;font-family:inherit;font-weight:800;font-size:13px;}
+[data-mode="dark"] .qBtn{color:#1a1410;}
+.qWord{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.25);border-radius:14px;padding:12px 14px;margin-bottom:8px;font-family:inherit;color:var(--text);}
+.qWordAr{font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;font-size:24px;direction:rtl;color:var(--accent);}
+.qIcon{width:44px;height:44px;border-radius:12px;display:block;margin:0 auto;}
+/* ===== Kids corner ===== */
+.kidsScore{display:inline-block;background:#FFF3C4;color:#7A5A00;font-weight:800;padding:6px 14px;border-radius:20px;margin-bottom:12px;}
+.kidsGame{display:flex;align-items:center;gap:12px;width:100%;background:var(--surface);border:2px solid rgba(255,183,3,.45);border-radius:18px;padding:12px 14px;margin-bottom:10px;font-family:inherit;color:var(--text);text-align:start;font-size:14px;}
+.kidsEmo{width:50px;height:50px;border-radius:14px;background:#FFF3C4;display:flex;align-items:center;justify-content:center;font-size:26px;flex:none;}
+.kidsQ{font-size:16px;font-weight:800;text-align:center;margin:10px 0;line-height:1.7;}
+.kidsSpeak{display:block;margin:0 auto 12px;background:var(--brand);color:#fff;border:none;border-radius:14px;padding:10px 18px;font-family:inherit;font-weight:800;}
+.kidsGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.kidsGridCol{grid-template-columns:1fr;}
+.kidsOpt{background:var(--surface);border:2px solid rgba(var(--acc-rgb),.35);border-radius:16px;padding:14px 8px;font-family:inherit;font-size:15px;font-weight:700;color:var(--text);}
+.kidsLetter{font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;font-size:40px;color:var(--accent);padding:10px 0;}
+.kidsWordBig{display:block;margin:6px auto 12px;background:var(--surface);border:2px solid var(--accent);border-radius:18px;padding:14px 26px;font-family:'Noto Naskh Arabic','Amiri','Traditional Arabic',serif;font-size:34px;color:var(--accent);direction:rtl;}
+.kidsMsg{background:#E8F7EE;color:#1B6B3A;border-radius:14px;padding:10px;text-align:center;font-weight:800;margin-bottom:10px;}
+.kidsDone{background:var(--surface);border:1px solid rgba(var(--acc-rgb),.3);border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:13px;font-weight:700;}
+.kidsNext{display:block;margin:12px auto;background:#FFB703;color:#fff;border:none;border-radius:14px;padding:11px 22px;font-family:inherit;font-weight:800;}
+.kidsBack{display:block;margin:14px auto 0;background:none;border:none;color:var(--muted);font-family:inherit;font-weight:700;}
+/* ===== 99 Names grid ===== */
+.asmaIntro{text-align:center;color:var(--accent);font-weight:800;font-size:14px;margin:4px 0 12px;}
+.asmaGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.asmaCard{position:relative;background:var(--surface);border:1px solid rgba(var(--acc-rgb),.35);border-radius:16px;padding:16px 8px 12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.asmaNum{position:absolute;top:7px;left:9px;width:22px;height:22px;border-radius:50%;background:rgba(var(--acc-rgb),.16);color:var(--accent);font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.asmaAr{font-size:24px;line-height:1.6;color:var(--accent);direction:rtl;}
+.asmaEn{font-size:13px;font-weight:800;margin-top:2px;}
+.asmaAm{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5;}
+@media (max-width:340px){.asmaGrid{grid-template-columns:1fr;}}
+/* ===== AI chat ===== */
+.aiFab{position:fixed;bottom:78px;left:18px;width:58px;height:58px;border-radius:50%;background:#fff;border:2px solid var(--accent);padding:0;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:30;}
+.aiFab img{width:100%;height:100%;object-fit:cover;display:block;}
+.aiWrap{display:flex;flex-direction:column;gap:10px;}
+.aiNote{font-size:12px;color:var(--muted);background:var(--surface);border:1px solid rgba(var(--acc-rgb),.3);border-radius:12px;padding:9px 12px;line-height:1.5;}
+.aiList{display:flex;flex-direction:column;gap:10px;}
+.aiMsg{display:flex;}
+.aiMsg.user{justify-content:flex-end;}
+.aiBub{max-width:85%;padding:10px 13px;border-radius:14px;background:var(--surface);border:1px solid rgba(0,0,0,.06);font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.aiMsg.user .aiBub{background:var(--brand);color:#fff;border-color:transparent;}
+.aiForm{display:flex;gap:8px;position:sticky;bottom:0;background:var(--bg);padding:6px 0;}
+.aiForm input{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,.15);font-size:14px;font-family:inherit;background:#fff;color:var(--text);}
+[data-mode="dark"] .aiForm input{background:var(--surface);}
+.aiSend{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:0 16px;font-weight:800;font-family:inherit;}
+[data-mode="dark"] .aiSend{color:#1a1410;}
+.aiSend:disabled{opacity:.5;}
+</style>
+</head>
+<body>
+<div id="splash"><img alt=""><h1></h1><p></p><div class="dots"><i></i><i></i><i></i></div></div>
+<div id="app"></div>
+<script>
+const STORAGE_KEY = 'risala_app_data_v1';
+const LOGO_URI = 'data:image/jpeg;base64,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';
+const FEATURES = [
+  {key:'about',   icon:'🕌', hue:'#1E88E5', am:'ስለ ሪሳላ ኢስላማዊ ፋውንዴሽን', en:'About Risala', type:'feed'},
+  {key:'charity', icon:'🤲', hue:'#E53935', am:'ሪሳላ በጎ አድራጎት ዘርፍ',     en:'Charity Sector', type:'feed'},
+  {key:'quran',   icon:'📖', hue:'#43A047', am:'ሪሳላ ቂርኣት ዘርፍ',         en:"Qira'ah Sector", type:'feed'},
+  {key:'dawah',   icon:'📢', hue:'#FB8C00', am:'ሪሳላ የዳዕዋ ዘርፍ',          en:"Da'wah Sector", type:'tabs',
+     tabs:[{key:'dawah_urban', am:'የከተማ', en:'Urban'},{key:'dawah_rural', am:'የገጠር', en:'Rural'}]},
+  {key:'courses', icon:'🎓', hue:'#8E24AA', am:'ኢስላማዊ ኮርሶች',           en:'Islamic Courses', type:'feed'},
+  {key:'news',    icon:'📰', hue:'#00ACC1', am:'ሪሳላ ዜና',                en:'Risala News', type:'feed'},
+  {key:'worship', icon:'🕋', hue:'#C99A2E', am:'የአምልኮ መአከል',            en:'Worship Center', type:'worship'},
+  {key:'social',  icon:'🔗', hue:'#3949AB', am:'የሶሻል ሚዲያ አማራጮች',      en:'Social Media', type:'social'},
+  {key:'feedback',icon:'💬', hue:'#EC407A', am:'ሀሳብና አስተያየት',           en:'Feedback', type:'feedback'},
+  {key:'support', icon:'💚', hue:'#2E7D32', am:'ሪሳላን ለመደገፍ',           en:'Support Risala', type:'feed'},
+  {key:'aichat',icon:()=>`<img class="qIcon" src="${AI_ICON_URI}" alt="">`, hue:'#0B6E4F', am:'ኢስላማዊ ጥያቄ (AI)', en:'Islamic Q&A (AI)', type:'ai'},
+  {key:'kids',icon:()=>`<img class="qIcon" src="${QAIDA_ICON_URI}" alt="">`, hue:'#FFB703', am:'ለህፃናት', en:'For Kids', type:'kids'},
+  {key:'contact', icon:'📞', hue:'#6D4C41', am:'ሪሳላን ያግኙ',             en:'Contact Us', type:'contact'},
+];
+/* Feature names in other languages (fallback: English) */
+const FEAT_NAMES = {
+  about:{ar:'عن مؤسسة الرسالة',om:'Waa’ee Risaalaa',ti:'ብዛዕባ ሪሳላ',so:'Ku saabsan Risaala'},
+  charity:{ar:'قطاع الأعمال الخيرية',om:'Kutaa Hojii Gargaarsaa',ti:'ክፍሊ ሓገዝ ረድኤት',so:'Qaybta Samafalka'},
+  quran:{ar:'قطاع القراءة',om:'Kutaa Qira’aa',ti:'ክፍሊ ቂርኣት',so:'Qaybta Qiraa’ada'},
+  dawah:{ar:'قطاع الدعوة',om:'Kutaa Da’wataa',ti:'ክፍሊ ዳዕዋ',so:'Qaybta Da’wada'},
+  dawah_urban:{ar:'الحضر',om:'Magaalaa',ti:'ከተማ',so:'Magaalo'},
+  dawah_rural:{ar:'الريف',om:'Baadiyyaa',ti:'ገጠር',so:'Miyi'},
+  courses:{ar:'الدورات الإسلامية',om:'Koorsota Islaamaa',ti:'ኢስላማዊ ኮርሳት',so:'Koorsooyinka Islaamka'},
+  news:{ar:'أخبار الرسالة',om:'Oduu Risaalaa',ti:'ዜና ሪሳላ',so:'Wararka Risaala'},
+  worship:{ar:'مركز العبادة',om:'Giddugala Ibaadaa',ti:'ማእከል ኣምልኾ',so:'Xarunta Cibaadada'},
+  social:{ar:'وسائل التواصل',om:'Toora Hawaasaa',ti:'ማሕበራዊ መራኸቢታት',so:'Baraha Bulshada'},
+  feedback:{ar:'الآراء والاقتراحات',om:'Yaada fi Gorsa',ti:'ሓሳብን ርእይቶን',so:'Talooyin iyo Fikrado'},
+  support:{ar:'ادعم الرسالة',om:'Risaalaa Deeggaruu',ti:'ንሪሳላ ደግፍ',so:'Taageer Risaala'},
+  contact:{ar:'اتصل بنا',om:'Nu Qunnamaa',ti:'ርኸቡና',so:'Nala soo xiriir'}
+};
+const SOCIAL_LINKS = [
+  {name:'ቴሌግራም', en:'Telegram', color:'#229ED9', ic:'✈️', url:'https://t.me/risala_eslamic_foundaion'},
+  {name:'ቲክቶክ',   en:'TikTok',   color:'#111111', ic:'🎵', url:'https://vm.tiktok.com/ZS9FSm7BL2DPe-CDNh4/'},
+  {name:'ዩቲዩብ',   en:'YouTube',  color:'#FF0000', ic:'▶️', url:'https://youtube.com/@risalaeslamicfoundtion?si=L7pkA6Z4Pyk1LruV'},
+  {name:'ኢንስታግራም', en:'Instagram', color:'#E1306C', ic:'📷', url:'https://www.instagram.com/risala_islamic_foundation?rpxt=MWVwODUydGp4emd4bA=='},
+];
+const THEMES = [
+  {k:'gold',mode:'dark',c:'#E8B93D',n:{am:'ወርቃማ ምሽት',en:'Golden Night'}},
+  {k:'green',mode:'light',c:'#0B6E4F',n:{am:'አረንጓዴ',en:'Emerald'}},
+  {k:'royal',mode:'light',c:'#1E5BC6',n:{am:'ሰማያዊ',en:'Royal Blue'}},
+  {k:'teal',mode:'light',c:'#0E5C6B',n:{am:'ጥቁር ውሃ',en:'Teal'}},
+  {k:'navy',mode:'light',c:'#152A54',n:{am:'ጥቁር ሰማያዊ',en:'Navy'}},
+  {k:'maroon',mode:'light',c:'#6B1E2B',n:{am:'ወይን ጠጅ',en:'Maroon'}},
+  {k:'purple',mode:'light',c:'#5B3FA8',n:{am:'ሐምራዊ',en:'Purple'}},
+  {k:'sunset',mode:'light',c:'#C4571A',n:{am:'ብርቱካናማ',en:'Sunset'}},
+  {k:'rose',mode:'light',c:'#B0305F',n:{am:'ሮዝ',en:'Rose'}},
+  {k:'brown',mode:'light',c:'#6B4A2B',n:{am:'ቡናማ',en:'Coffee'}},
+  {k:'sky',mode:'light',c:'#0A8FBF',n:{am:'ሰማያዊ ብርሃን',en:'Sky'}},
+  {k:'nightblue',mode:'dark',c:'#2F6FDE',n:{am:'ሰማያዊ ምሽት',en:'Blue Night'}},
+  {k:'emeraldnight',mode:'dark',c:'#0F3B2C',n:{am:'አረንጓዴ ምሽት',en:'Green Night'}},
+  {k:'purplenight',mode:'dark',c:'#3B2778',n:{am:'ሐምራዊ ምሽት',en:'Purple Night'}},
+];
+const LANGS = [
+  {k:'am',n:'አማርኛ'},{k:'en',n:'English'},{k:'ar',n:'العربية'},
+  {k:'om',n:'Afaan Oromoo'},{k:'ti',n:'ትግርኛ'},{k:'so',n:'Soomaali'}
+];
+
+const ASMA = [
+["الله","Allah","አላህ"],["الرحمن","Ar-Rahman","አዛኝ"],["الرحيم","Ar-Rahim","መሓሪ"],["الملك","Al-Malik","ንጉሥ"],
+["القدوس","Al-Quddus","ቅዱስ"],["السلام","As-Salam","ሰላም ሰጪ"],["المؤمن","Al-Mu'min","አማኝ ጠባቂ"],["المهيمن","Al-Muhaymin","ተቆጣጣሪ"],
+["العزيز","Al-Aziz","ኃያል"],["الجبار","Al-Jabbar","አስገዳጅ"],["المتكبر","Al-Mutakabbir","ታላቅነት ባለቤት"],["الخالق","Al-Khaliq","ፈጣሪ"],
+["البارئ","Al-Bari","አስገኚ"],["المصور","Al-Musawwir","ቀራጺ"],["الغفار","Al-Ghaffar","በጣም ይቅር ባይ"],["القهار","Al-Qahhar","አሸናፊ"],
+["الوهاب","Al-Wahhab","ስጪ"],["الرزاق","Ar-Razzaq","ሲሳይ ሰጪ"],["الفتاح","Al-Fattah","ከፋች"],["العليم","Al-Alim","ሁሉን አዋቂ"],
+["القابض","Al-Qabid","ጠባቢ"],["الباسط","Al-Basit","ዘርጊ"],["الخافض","Al-Khafid","ዝቅ አድራጊ"],["الرافع","Ar-Rafi","ከፍ አድራጊ"],
+["المعز","Al-Mu'izz","አክባሪ"],["المذل","Al-Muzill","አዋራጅ"],["السميع","As-Sami","ሰሚ"],["البصير","Al-Basir","ተመልካች"],
+["الحكم","Al-Hakam","ፈራጅ"],["العدل","Al-Adl","ፍትሓዊ"],["اللطيف","Al-Latif","ረቂቅ ደግ"],["الخبير","Al-Khabir","ውስጣዊ አዋቂ"],
+["الحليم","Al-Halim","ታጋሽ"],["العظيم","Al-Azim","ታላቅ"],["الغفور","Al-Ghafur","ይቅር ባይ"],["الشكور","Ash-Shakur","አመስጋኝ"],
+["العلي","Al-Aliyy","ልዑል"],["الكبير","Al-Kabir","ታላቅ"],["الحفيظ","Al-Hafiz","ጠባቂ"],["المقيت","Al-Muqit","ምግብ ሰጪ"],
+["الحسيب","Al-Hasib","ስሌት ያደርግ"],["الجليل","Al-Jalil","ግርማ ሞገስ ያለው"],["الكريم","Al-Karim","ቸር"],["الرقيب","Ar-Raqib","ተጠባባቂ"],
+["المجيب","Al-Mujib","መላሽ"],["الواسع","Al-Wasi","ሰፊ"],["الحكيم","Al-Hakim","ጥበበኛ"],["الودود","Al-Wadud","አፍቃሪ"],
+["المجيد","Al-Majid","ክቡር"],["الباعث","Al-Ba'ith","አስነሺ"],["الشهيد","Ash-Shahid","ምስክር"],["الحق","Al-Haqq","እውነት"],
+["الوكيل","Al-Wakil","ተወካይ"],["القوي","Al-Qawiyy","ብርቱ"],["المتين","Al-Matin","ጽኑ"],["الولي","Al-Waliyy","ረዳት"],
+["الحميد","Al-Hamid","ምስጉን"],["المحصي","Al-Muhsi","ቆጣሪ"],["المبدئ","Al-Mubdi","ጀማሪ"],["المعيد","Al-Mu'id","መላሽ"],
+["المحيي","Al-Muhyi","ሕይወት ሰጪ"],["المميت","Al-Mumit","ገዳይ"],["الحي","Al-Hayy","ሕያው"],["القيوم","Al-Qayyum","ራሱን ችሎ ያለ"],
+["الواجد","Al-Wajid","አግኚ"],["الماجد","Al-Majid","ክቡር"],["الواحد","Al-Wahid","አንድ"],["الصمد","As-Samad","ራሱን የቻለ"],
+["القادر","Al-Qadir","ቻይ"],["المقتدر","Al-Muqtadir","ኃያል ቻይ"],["المقدم","Al-Muqaddim","አስቀዳሚ"],["المؤخر","Al-Mu'akhkhir","አዘግይ"],
+["الأول","Al-Awwal","መጀመሪያ"],["الآخر","Al-Akhir","መጨረሻ"],["الظاهر","Az-Zahir","ገላጭ"],["الباطن","Al-Batin","ስውር"],
+["الوالي","Al-Wali","ገዢ"],["المتعالي","Al-Muta'ali","የላቀ"],["البر","Al-Barr","ደግ"],["التواب","At-Tawwab","ንስሓ ተቀባይ"],
+["المنتقم","Al-Muntaqim","ተበቃይ"],["العفو","Al-Afuww","ይቅር ባይ"],["الرؤوف","Ar-Ra'uf","ርኅሩኅ"],["مالك الملك","Malik-ul-Mulk","የንግስና ባለቤት"],
+["ذو الجلال والإكرام","Dhul-Jalali wal-Ikram","የግርማ ባለቤት"],["المقسط","Al-Muqsit","ፍትሓዊ"],["الجامع","Al-Jami","ሰብሳቢ"],
+["الغني","Al-Ghaniyy","ባለጸጋ"],["المغني","Al-Mughni","አበልጻጊ"],["المانع","Al-Mani","ከልካይ"],["الضار","Ad-Darr","ጎጂ"],
+["النافع","An-Nafi","ጠቃሚ"],["النور","An-Nur","ብርሃን"],["الهادي","Al-Hadi","መሪ"],["البديع","Al-Badi","ድንቅ ፈጣሪ"],
+["الباقي","Al-Baqi","ዘላለማዊ"],["الوارث","Al-Warith","ወራሽ"],["الرشيد","Ar-Rashid","ቅን መሪ"],["الصبور","As-Sabur","ታጋሽ"]
+];
+const HIJRI_MONTHS=['ሙሐረም','ሶፈር','ረቢዑል አወል','ረቢዑል ሣኒ','ጀማዱል አወል','ጀማዱል ሣኒ','ረጀብ','ሻእባን','ረመዷን','ሸዋል','ዙልቂዕዳ','ዙልሒጃ'];
+
+/* Dua / Adhkar tabbed content */
+const DUA_TABS=[{k:'morning',am:'ጠዋት'},{k:'evening',am:'ምሽት'},{k:'daily',am:'ዕለታዊ'}];
+const ADHKAR_TABS=[{k:'morning',am:'ጠዋት'},{k:'evening',am:'ምሽት'}];
+const DUAS = {
+  morning:[
+    {label:'MORNING DUA · 1', ar:'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ', translit:'Asbahna wa asbahal-mulku lillah, walhamdu lillah', en:'We have entered the morning and with it all dominion belongs to Allah, and all praise is for Allah.', am:'ጧት ገባን፣ ንግስናም ለአላህ ነው፣ ምስጋናም ለአላህ ነው።', source:'Abu Dawud'},
+    {label:'MORNING DUA · 2', ar:'اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ', translit:"Allahumma bika asbahna, wa bika amsayna, wa bika nahya wa bika namutu wa ilaykan-nushur", en:'O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the resurrection.', am:'አላህ ሆይ! በአንተ ጧት ገባን፣ በአንተ ምሽት ገባን፣ በአንተ እንኖራለን በአንተ እንሞታለን፣ ወደ አንተም መመለሻ ነው።', source:'At-Tirmidhi'}
+  ],
+  evening:[
+    {label:'EVENING DUA · 1', ar:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ', translit:'Amsayna wa amsal-mulku lillah, walhamdu lillah', en:'We have entered the evening and with it all dominion belongs to Allah, and all praise is for Allah.', am:'ማታ ገባን፣ ንግስናም ለአላህ ነው፣ ምስጋናም ለአላህ ነው።', source:'Abu Dawud'},
+    {label:'EVENING DUA · 2', ar:'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ', translit:"Allahumma inni amsaytu ushhiduka wa ushhidu hamalata arshika", en:'O Allah, I have entered the evening calling You to witness, and calling Your Throne bearers to witness.', am:'አላህ ሆይ! ማታ ገባሁ አንተን መስካሪ አድርጌ፣ የዙፋንህን ተሸካሚዎችም መስካሪ አድርጌ።', source:'Abu Dawud'}
+  ],
+  daily:[
+    {label:'DAILY DUA · 1', ar:'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', translit:'Bismillahir-rahmanir-rahim', en:'In the name of Allah, the Most Gracious, the Most Merciful.', am:'በአላህ ስም፣ እጅግ በጣም ርኅሩኅ፣ እጅግ በጣም አዛኝ በሆነው።', source:'Quran 1:1'},
+    {label:'DAILY DUA · 2', ar:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', translit:"Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-nar", en:'Our Lord, give us in this world that which is good and in the Hereafter that which is good, and protect us from the punishment of the Fire.', am:'ጌታችን ሆይ! በዚህ ዓለም መልካምን ስጠን፣ በመጪውም ዓለም መልካምን ስጠን፣ ከእሳት ቅጣትም ጠብቀን።', source:'Quran 2:201'},
+    {label:'DAILY DUA · 3', ar:'اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي', translit:'Allahummahdini wa saddidni', en:'O Allah, guide me and make me steadfast.', am:'አላህ ሆይ! ምራኝ አቅናኝም።', source:'Sahih Muslim'}
+  ]
+};
+const ADHKAR = {
+  morning:[
+    {label:'MORNING ADHKAR · 1', ar:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', translit:'Subhanallahi wa bihamdih', en:'Glory be to Allah and praise Him.', am:'ጥራት ይግባውና ለአላህ፣ ምስጋናም ለእርሱ ይሁን።', source:'100x · Sahih Muslim'},
+    {label:'MORNING ADHKAR · 2', ar:'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ', translit:'La ilaha illallahu wahdahu la sharika lah', en:'There is no god but Allah alone, without partner.', am:'ከአላህ በስተቀር ሌላ አምላክ የለም፣ ብቻውን ነው ተጋሪ የለውም።', source:'Sahih Bukhari'}
+  ],
+  evening:[
+    {label:'EVENING ADHKAR · 1', ar:'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ', translit:"A'udhu bikalimatillahit-tammati min sharri ma khalaq", en:'I seek refuge in the perfect words of Allah from the evil of what He has created.', am:'በአላህ ፍጹም ቃላት ከፈጠረው ክፉ ነገር እጠበቃለሁ።', source:'Sahih Muslim'},
+    {label:'EVENING ADHKAR · 2', ar:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ', translit:"Hasbiyallahu la ilaha illa huwa", en:'Allah is sufficient for me; there is no god but Him.', am:'አላህ ይበቃኛል፣ ከእርሱ በስተቀር ሌላ አምላክ የለም።', source:'Quran 9:129'}
+  ]
+};
+const SALAWAT = [
+  {id:'ibrahimiyya', title:'Salawat Ibrahimiyya', subtitle:'The Salawat recited in Tashahhud', recommended:10,
+    ar:'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ',
+    translit:"Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallayta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid",
+    en:'O Allah, send prayers upon Muhammad and upon the family of Muhammad, as You sent prayers upon Ibrahim and upon the family of Ibrahim. Indeed, You are Praiseworthy and Glorious.',
+    am:'አላህ ሆይ! ለሙሐመድና ለሙሐመድ ቤተሰብ ሰላት አውርድ፣ ለኢብራሂምና ለኢብራሂም ቤተሰብ እንዳወረድክ፤ አንተ ምስጉንና ክቡር ነህ።'},
+  {id:'alfatih', title:'Salawat Al-Fatih', subtitle:'Short and powerful Salawat', recommended:100,
+    ar:'اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ الْفَاتِحِ لِمَا أُغْلِقَ',
+    translit:"Allahumma salli 'ala sayyidina Muhammadin al-fatihi lima ughliq",
+    en:'O Allah, send prayers upon our master Muhammad, the opener of what was closed.',
+    am:'አላህ ሆይ! የተዘጋውን ሁሉ ለከፈተ ጌታችን ሙሐመድ ሰላት ላክ።'},
+  {id:'simple', title:'Simple Salawat', subtitle:'The easiest form', recommended:100,
+    ar:'صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ', translit:"Sallallahu 'alayhi wa sallam",
+    en:"May Allah's peace and blessings be upon him.", am:'አላህ ሰላምና ምህረቱ በእርሱ ላይ ይሁን።'},
+  {id:'friday', title:'Salawat for Friday', subtitle:'Recommended on the blessed day', recommended:1000,
+    ar:'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ', translit:'Allahumma salli wa sallim ala nabiyyina Muhammad',
+    en:'O Allah, send prayers and peace upon our Prophet Muhammad.', am:'አላህ ሆይ! በነብያችን ሙሐመድ ላይ ሰላትና ሰላምታ አውርድ።'}
+];
+const TASBIH_ITEMS=[
+  {k:'subhanallah',ar:'سُبْحَانَ اللَّه',word:'SubhanAllah',mean:'Glory be to Allah'},
+  {k:'alhamdulillah',ar:'الْحَمْدُ لِلَّه',word:'Alhamdulillah',mean:'All praise is due to Allah'},
+  {k:'allahuakbar',ar:'اللَّهُ أَكْبَر',word:'Allahu Akbar',mean:'Allah is the Greatest'}
+];
+function gregorianToHijri(date){
+  let jd = Math.floor((1461*(date.getFullYear()+4800+Math.floor((date.getMonth()+1-14)/12)))/4)
+    +Math.floor((367*(date.getMonth()+1-2-12*Math.floor((date.getMonth()+1-14)/12)))/12)
+    -Math.floor((3*Math.floor((date.getFullYear()+4900+Math.floor((date.getMonth()+1-14)/12))/100))/4)
+    +date.getDate()-32075;
+  let l = jd - 1948440 + 10632;
+  let n = Math.floor((l-1)/10631);
+  l = l - 10631*n + 354;
+  let j = (Math.floor((10985-l)/5316))*(Math.floor((50*l)/17719)) + (Math.floor(l/5670))*(Math.floor((43*l)/15238));
+  l = l - (Math.floor((30-j)/15))*(Math.floor((17719*j)/50)) - (Math.floor(j/16))*(Math.floor((15238*j)/43)) + 29;
+  let month = Math.floor((24*l)/709);
+  let day = l - Math.floor((709*month)/24);
+  let year = 30*n + j - 30;
+  return {day, month, year};
+}
+function qiblaBearing(lat,lon){
+  const toRad=d=>d*Math.PI/180, toDeg=r=>r*180/Math.PI;
+  const kLat=toRad(21.4225), kLon=toRad(39.8262);
+  const phi1=toRad(lat), lam1=toRad(lon);
+  const dLon = kLon-lam1;
+  const y = Math.sin(dLon)*Math.cos(kLat);
+  const x = Math.cos(phi1)*Math.sin(kLat)-Math.sin(phi1)*Math.cos(kLat)*Math.cos(dLon);
+  let brng = toDeg(Math.atan2(y,x));
+  return (brng+360)%360;
+}
+const T = {
+  am:{
+    home:'መነሻ', settings:'ማስተካከያ', add:'አክል', edit:'አርትዕ', delete:'ሰርዝ', save:'አስቀምጥ', cancel:'ተወው',
+    title:'ርዕስ', body:'ይዘት', image:'ፎቶ', video:'ቪድዮ ሊንክ', audio:'ኦዲዮ ሊንክ', link:'ተጨማሪ ሊንክ',
+    newPost:'አዲስ ልጥፍ', noPosts:'እስካሁን ምንም ልጥፍ የለም', language:'ቋንቋ', theme:'ገፅታ ቀለም',
+    adminMode:'የአድሚን ሁነታ', adminOn:'አድሚን ገብተዋል', enterPin:'የአድሚን ፒን ያስገቡ', wrongPin:'ትክክል ያልሆነ ፒን',
+    logout:'ውጣ', socialIntro:'የእኛን ማህበራዊ ሚዲያ ገፆች ይከተሉ', feedbackIntro:'ሀሳብዎን እና አስተያየትዎን ያጋሩን',
+    yourName:'ስምዎ', yourMsg:'መልእክትዎ', submit:'ላክ', submitted:'ተልኳል! እናመሰግናለን',
+    submissions:'የደረሱ አስተያየቶች', contactIntro:'ሪሳላን በሚከተሉት መንገዶች ማግኘት ይችላሉ', phone:'ስልክ',
+    email:'ኢሜይል', address:'አድራሻ', editContact:'መረጃ አርትዕ', supportIntro:'ሪሳላን ለመደገፍ ከዚህ በታች ያሉትን አማራጮች ይመልከቱ',
+    appName:'ሪሳላ ኢስላማዊ ፋውንዴሽን', appTag:'ኢስላማዊ አገልግሎት ለሁሉም', pinLabel:'የአድሚን ፒን ቀይር', newPin:'አዲስ ፒን',
+    saved:'ተቀምጧል',
+    mosqueLocator:'የመስጊድ መፈለጊያ', qiblaFinder:'ቂብላ መፈለጊያ', islamicCalendar:'ኢስላማዊ ካላንደር',
+    todayPrayerTimes:'የዛሬ የሶላት ጊዜያት', fajr:'ፈጅር', dhuhr:'ዙህር', asr:'አስር', maghrib:'መግሪብ', isha:'ኢሻእ',
+    quranAndTime:'ቁርኣን እና አውቀት', mushaf:'መጽሐፍ ቤት', tafsir:'ቁርኣን ተፍሲር', asma:'99 ስሞች',
+    spiritualPractices:'ዕለታዊ መንፈሳዊ ልምምድ', dua:'ዱዓ', adhkar:'አዝካር', tasbih:'ተስቢህ', salawat:'ሰለዋት',
+    dawahBannerTxt:'ወደ ዳዕዋ ዘርፍ ለመሄድ ይጫኑ', nearbyMosques:'ቅርብ መስጀዶች', viewMap:'ካርታ ይመልከቱ',
+    tapToCount:'ለመቁጠር ይንኩ', reset:'ዳግም አስጀምር', fromNorth:'ከሰሜን አቅጣጫ',
+    noGeo:'የአካባቢ አገልግሎት አልተቻለም', getHelpTelegram:'በቴሌግራም በኩል እርዳታ ያግኙ',
+    accountSettings:'መለያ ቅንብሮች', generalSettings:'አጠቃላይ ቅንብሮች', generalSettingsSub:'መገለጫ፣ የይለፍ ቃል እና ሌሎችም',
+    notifSettings:'የማሳወቂያ ቅንብሮች', notifSettingsSub:'የማሳወቂያ ምርጫዎችን ያስተዳድሩ',
+    preferences:'ምርጫዎች', privacySettings:'ግላዊነት እና ደህንነት', privacySettingsSub:'ግላዊነትዎን ያስተዳድሩ',
+    support:'ድጋፍ', about:'ስለ እኛ', version:'ስሪት', exitSub:'ከመለያዎ ይውጡ',
+    azanSound:'የአዛን ድምፅ', azanHint:'የሶላት ሰዓት ሲደርስ የሚሰማ ድምፅ ከጋለሪዎ ይምረጡ', azanSet:'ተመርጧል', azanNotSet:'አልተመረጠም'
+  },
+  en:{
+    home:'Home', settings:'Settings', add:'Add', edit:'Edit', delete:'Delete', save:'Save', cancel:'Cancel',
+    title:'Title', body:'Content', image:'Photo', video:'Video link', audio:'Audio link', link:'More link',
+    newPost:'New Post', noPosts:'No posts yet', language:'Language', theme:'Theme Color',
+    adminMode:'Admin Mode', adminOn:'Admin signed in', enterPin:'Enter admin PIN', wrongPin:'Incorrect PIN',
+    logout:'Log out', socialIntro:'Follow our social media pages', feedbackIntro:'Share your thoughts and feedback with us',
+    yourName:'Your name', yourMsg:'Your message', submit:'Submit', submitted:'Submitted! Thank you',
+    submissions:'Received feedback', contactIntro:'You can reach Risala through the following', phone:'Phone',
+    email:'Email', address:'Address', editContact:'Edit info', supportIntro:'See the options below to support Risala',
+    appName:'Risala Islamic Foundation', appTag:'Islamic service for all', pinLabel:'Change admin PIN', newPin:'New PIN',
+    saved:'Saved',
+    mosqueLocator:'Mosque Locator', qiblaFinder:'Qibla Finder', islamicCalendar:'Islamic Calendar',
+    todayPrayerTimes:"Today's Prayer Times", fajr:'Fajr', dhuhr:'Dhuhr', asr:'Asr', maghrib:'Maghrib', isha:'Isha',
+    quranAndTime:'Quran & Knowledge', mushaf:'Mushaf', tafsir:'Tafsir', asma:'99 Names',
+    spiritualPractices:'Daily Spiritual Practice', dua:'Dua', adhkar:'Adhkar', tasbih:'Tasbih', salawat:'Salawat',
+    dawahBannerTxt:"Tap to visit the Da'wah section", nearbyMosques:'Nearby Mosques', viewMap:'View map',
+    tapToCount:'Tap to count', reset:'Reset', fromNorth:'from North',
+    noGeo:'Location service unavailable', getHelpTelegram:'Get help via Telegram',
+    accountSettings:'Account settings', generalSettings:'General settings', generalSettingsSub:'Profile, password and more',
+    notifSettings:'Notification settings', notifSettingsSub:'Manage notification preferences',
+    preferences:'Preferences', privacySettings:'Privacy & Security', privacySettingsSub:'Manage your privacy',
+    support:'Support', about:'About', version:'Version', exitSub:'Sign out of your account',
+    azanSound:'Azan Sound', azanHint:'Pick an audio file from your gallery to play at prayer times', azanSet:'Set', azanNotSet:'Not set'
+  }
+};
+
+/* ---- new keys for am/en ---- */
+Object.assign(T.am,{like:'ወድጄዋለሁ',dislike:'አልወደድኩትም',comment:'አስተያየት',writeComment:'አስተያየት ይጻፉ…',send:'ላክ',
+  morning:'ጠዋት',evening:'ምሽት',daily:'ዕለታዊ',pickPhoto:'ፎቶ ከጋለሪ',pickVideo:'ቪድዮ ከጋለሪ',pickAudio:'ኦዲዮ ከጋለሪ',
+  greet:'ሰላምአለይኩም',nextPrayer:'የሚቀጥለው ሶላት',prayerNow:'የ{p} ሶላት ሰዓት ደርሷል',notifOn:'በርቷል',notifOff:'ጠፍቷል',
+  offlineNeed:'ኢንተርኔት ያስፈልጋል',posted:'ተለጥፏል',saving:'በማስቀመጥ ላይ…',enter:'ግባ',orLink:'ወይም ሊንክ ይለጥፉ',
+  notifications:'ማሳወቂያዎች',mediaHint:'ፎቶ/ቪድዮ/ኦዲዮ በቀጥታ ከስልክ ጋለሪ ይመረጣል'});
+Object.assign(T.en,{like:'Like',dislike:'Dislike',comment:'Comment',writeComment:'Write a comment…',send:'Send',
+  morning:'Morning',evening:'Evening',daily:'Daily',pickPhoto:'Photo from gallery',pickVideo:'Video from gallery',pickAudio:'Audio from gallery',
+  greet:'Assalamu Alaikum',nextPrayer:'Next prayer',prayerNow:'It is time for {p} prayer',notifOn:'On',notifOff:'Off',
+  offlineNeed:'Internet connection required',posted:'Posted',saving:'Saving…',enter:'Enter',orLink:'or paste a link',
+  notifications:'Notifications',mediaHint:'Pick photo/video/audio directly from your phone gallery'});
+
+T.ar={home:'الرئيسية',settings:'الإعدادات',add:'إضافة',edit:'تعديل',delete:'حذف',save:'حفظ',cancel:'إلغاء',title:'العنوان',body:'المحتوى',
+ image:'صورة',video:'رابط فيديو',audio:'رابط صوت',link:'رابط إضافي',newPost:'منشور جديد',noPosts:'لا توجد منشورات بعد',language:'اللغة',
+ theme:'لون التطبيق',adminMode:'وضع المشرف',adminOn:'تم دخول المشرف',enterPin:'أدخل رمز المشرف',wrongPin:'الرمز غير صحيح',logout:'تسجيل الخروج',
+ socialIntro:'تابعونا على منصات التواصل',feedbackIntro:'شاركنا رأيك واقتراحك',yourName:'اسمك',yourMsg:'رسالتك',submit:'إرسال',
+ submitted:'تم الإرسال، شكرًا لك',submissions:'الآراء الواردة',contactIntro:'يمكنكم التواصل مع الرسالة عبر',phone:'الهاتف',email:'البريد الإلكتروني',
+ address:'العنوان',editContact:'تعديل المعلومات',supportIntro:'اطلع على طرق دعم الرسالة أدناه',appName:'مؤسسة الرسالة الإسلامية',
+ appTag:'خدمة إسلامية للجميع',pinLabel:'تغيير رمز المشرف',newPin:'رمز جديد',saved:'تم الحفظ',mosqueLocator:'أقرب مسجد',qiblaFinder:'اتجاه القبلة',
+ islamicCalendar:'التقويم الهجري',todayPrayerTimes:'مواقيت الصلاة اليوم',fajr:'الفجر',dhuhr:'الظهر',asr:'العصر',maghrib:'المغرب',isha:'العشاء',
+ quranAndTime:'القرآن والعلم',mushaf:'المصحف',tafsir:'تفسير القرآن',asma:'أسماء الله الحسنى',spiritualPractices:'العبادات اليومية',dua:'الأدعية',
+ adhkar:'الأذكار',tasbih:'التسبيح',salawat:'الصلاة على النبي',dawahBannerTxt:'اضغط لزيارة قطاع الدعوة',nearbyMosques:'مساجد قريبة',
+ viewMap:'عرض الخريطة',fromNorth:'من الشمال',noGeo:'خدمة الموقع غير متاحة',getHelpTelegram:'احصل على المساعدة عبر تيليجرام',
+ preferences:'التفضيلات',support:'الدعم',about:'عن التطبيق',version:'الإصدار',azanSound:'صوت الأذان',
+ azanHint:'اختر ملفًا صوتيًا من المعرض ليُشغَّل عند دخول وقت الصلاة',azanSet:'تم التعيين',azanNotSet:'غير معيّن',like:'أعجبني',dislike:'لم يعجبني',
+ comment:'تعليق',writeComment:'اكتب تعليقًا…',send:'إرسال',morning:'الصباح',evening:'المساء',daily:'يومي',pickPhoto:'صورة من المعرض',
+ pickVideo:'فيديو من المعرض',pickAudio:'ملف صوتي من المعرض',greet:'السلام عليكم',nextPrayer:'الصلاة القادمة',prayerNow:'حان وقت صلاة {p}',
+ notifOn:'مفعّلة',notifOff:'متوقفة',offlineNeed:'يلزم الاتصال بالإنترنت',posted:'تم النشر',saving:'جارٍ الحفظ…',enter:'دخول',
+ orLink:'أو الصق رابطًا',notifications:'الإشعارات',mediaHint:'اختر الصورة/الفيديو/الصوت مباشرة من معرض الهاتف',
+ tapToCount:'اضغط للعد',reset:'إعادة'};
+
+T.om={home:'Mana',settings:'Qindaa’ina',add:'Itti dabali',edit:'Gulaali',delete:'Haqi',save:'Olkaa’i',cancel:'Dhiisi',title:'Mata duree',body:'Qabiyyee',
+ image:'Suuraa',video:'Liinkii vidiyoo',audio:'Liinkii sagalee',link:'Liinkii dabalataa',newPost:'Maxxansa haaraa',noPosts:'Ammatti maxxansi hin jiru',
+ language:'Afaan',theme:'Halluu appii',adminMode:'Haala Bulchaa',adminOn:'Bulchaan seenaniiru',enterPin:'PIN bulchaa galchi',wrongPin:'PIN sirrii miti',
+ logout:'Ba’i',socialIntro:'Marsariitiiwwan hawaasaa keenya hordofaa',feedbackIntro:'Yaada fi ergaa keessan nuuf qooduu',yourName:'Maqaa kee',
+ yourMsg:'Ergaa kee',submit:'Ergi',submitted:'Ergameera! Galatoomaa',submissions:'Yaadonni dhufan',contactIntro:'Risaalaa karaa kanaan nu qunnamaa',
+ phone:'Bilbila',email:'Imeelii',address:'Teessoo',editContact:'Odeeffannoo gulaali',supportIntro:'Risaalaa deeggaruuf filannoowwan armaan gadii ilaalaa',
+ appName:'Dhaabbata Islaamaa Risaalaa',appTag:'Tajaajila Islaamaa kan hundaaf',pinLabel:'PIN bulchaa jijjiiri',newPin:'PIN haaraa',saved:'Olkaa’ameera',
+ mosqueLocator:'Masjiida Barbaadi',qiblaFinder:'Qiblaa Barbaadi',islamicCalendar:'Kaalandarii Islaamaa',todayPrayerTimes:'Yeroo Salaataa Har’aa',
+ fajr:'Fajrii',dhuhr:'Zuhrii',asr:'Asrii',maghrib:'Maghribii',isha:'Ishaa’ii',quranAndTime:'Qur’aanaa fi Beekumsa',mushaf:'Mushafa',
+ tafsir:'Tafsiira Qur’aanaa',asma:'Maqaawwan 99',spiritualPractices:'Ibaadaa Guyyaa Guyyaa',dua:'Du’aa',adhkar:'Adhkaar',tasbih:'Tasbiihii',
+ salawat:'Salawaat',dawahBannerTxt:'Kutaa Da’wataa daawwachuuf tuqi',nearbyMosques:'Masjiiddoota Dhiyoo',viewMap:'Kaartaa ilaali',
+ fromNorth:'Kaaba irraa',noGeo:'Tajaajilli iddoo hin argamu',getHelpTelegram:'Telegraamiin gargaarsa argadhu',preferences:'Filannoowwan',
+ support:'Deeggarsa',about:'Waa’ee keenya',version:'Gosa',azanSound:'Sagalee Adaanii',
+ azanHint:'Yeroon salaataa yeroo ga’u sagaleen akka dhagahamu faayilii sagalee galarii irraa filadhu',azanSet:'Filatameera',azanNotSet:'Hin filatamne',
+ like:'Jaalladheera',dislike:'Hin jaalanne',comment:'Yaada',writeComment:'Yaada barreessi…',send:'Ergi',morning:'Ganama',evening:'Galgala',daily:'Guyyaa',
+ pickPhoto:'Suuraa galarii irraa',pickVideo:'Vidiyoo galarii irraa',pickAudio:'Sagalee galarii irraa',greet:'Assalaamu Alaykum',
+ nextPrayer:'Salaata itti aanu',prayerNow:'Yeroon salaata {p} ga’eera',notifOn:'Banaadha',notifOff:'Cufaadha',offlineNeed:'Interneetiin ni barbaachisa',
+ posted:'Maxxanfameera',saving:'Olkaa’aa jira…',enter:'Seeni',orLink:'ykn liinkii maxxansi',notifications:'Beeksisa',
+ mediaHint:'Suuraa/vidiyoo/sagalee kallattiin galarii bilbilaa irraa filadhu',tapToCount:'Lakkaa’uuf tuqi',reset:'Deebisi'};
+
+T.ti={home:'መእተዊ',settings:'ቅጥዒታት',add:'ወስኽ',edit:'ኣስተኻኽል',delete:'ደምስስ',save:'ኣቐምጥ',cancel:'ተው',title:'ኣርእስቲ',body:'ትሕዝቶ',
+ image:'ስእሊ',video:'ሊንክ ቪድዮ',audio:'ሊንክ ድምጺ',link:'ተወሳኺ ሊንክ',newPost:'ሓድሽ ጽሑፍ',noPosts:'ክሳብ ሕጂ ዝተዋህበ የለን',language:'ቋንቋ',
+ theme:'ሕብሪ ኣፕ',adminMode:'ኣድሚን ኣገባብ',adminOn:'ኣድሚን ኣትዩ',enterPin:'PIN ኣድሚን ኣእቱ',wrongPin:'ጌጋ PIN',logout:'ውጻእ',
+ socialIntro:'ማሕበራዊ መራኸቢታትና ስዓቡ',feedbackIntro:'ሓሳብካን ርእይቶኻን ኣካፍለና',yourName:'ስምካ',yourMsg:'መልእኽትኻ',submit:'ሰዲድ',
+ submitted:'ተለኢኹ! የቐንየልና',submissions:'ዝበጽሑ ርእይቶታት',contactIntro:'ንሪሳላ ብዝስዕቡ መንገድታት ርኸብዎ',phone:'ተሌፎን',email:'ኢሜይል',
+ address:'ኣድራሻ',editContact:'ሓበሬታ ኣስተኻኽል',supportIntro:'ንሪሳላ ንምድጋፍ ዝስዕቡ ኣማራጺታት ርኣዩ',appName:'ሪሳላ ኢስላማዊ ፋውንደሽን',
+ appTag:'ኢስላማዊ ኣገልግሎት ንኹሉ',pinLabel:'PIN ኣድሚን ቀይር',newPin:'ሓድሽ PIN',saved:'ተቐሚጡ',mosqueLocator:'መስጊድ ድለ',qiblaFinder:'ቅብላ ድለ',
+ islamicCalendar:'ኢስላማዊ ካላንደር',todayPrayerTimes:'ናይ ሎሚ ናይ ሶላት ግዜታት',fajr:'ፈጅሪ',dhuhr:'ዙሁር',asr:'ዓስሪ',maghrib:'መግሪብ',isha:'ዒሻእ',
+ quranAndTime:'ቁርኣንን ፍልጠትን',mushaf:'ሙስሓፍ',tafsir:'ተፍሲር ቁርኣን',asma:'99 ኣስማት',spiritualPractices:'መዓልታዊ መንፈሳዊ ልምምድ',dua:'ዱዓ',
+ adhkar:'ኣዝካር',tasbih:'ተስቢሕ',salawat:'ሰለዋት',dawahBannerTxt:'ናብ ክፍሊ ዳዕዋ ንምኻድ ጠውቕ',nearbyMosques:'ጥቓ ዘለዉ መስጊዳት',viewMap:'ካርታ ርአ',
+ fromNorth:'ካብ ሰሜን',noGeo:'ኣገልግሎት ቦታ የለን',getHelpTelegram:'ብቴሌግራም ሓገዝ ረኸብ',preferences:'ምርጫታት',support:'ደገፍ',about:'ብዛዕባና',
+ version:'ዕትም',azanSound:'ድምጺ ኣዛን',azanHint:'ግዜ ሶላት ምስ በጽሐ ዝሰማዕ ድምጺ ካብ ጋለሪ ምረጽ',azanSet:'ተመሪጹ',azanNotSet:'ኣይተመርጸን',
+ like:'ጽቡቕ',dislike:'ኣይደለኹዎን',comment:'ርእይቶ',writeComment:'ርእይቶ ጸሓፍ…',send:'ሰዲድ',morning:'ንግሆ',evening:'ምሸት',daily:'መዓልታዊ',
+ pickPhoto:'ስእሊ ካብ ጋለሪ',pickVideo:'ቪድዮ ካብ ጋለሪ',pickAudio:'ድምጺ ካብ ጋለሪ',greet:'ኣሰላሙ ዓላይኩም',nextPrayer:'ዝቕጽል ሶላት',
+ prayerNow:'ግዜ ሶላት {p} በጺሑ',notifOn:'ክፉት',notifOff:'ዕጹው',offlineNeed:'ኢንተርነት የድሊ',posted:'ተለጢፉ',saving:'ይቕመጥ ኣሎ…',enter:'እቶ',
+ orLink:'ወይ ሊንክ ለጥፍ',notifications:'መተሓሳሰቢታት',mediaHint:'ስእሊ/ቪድዮ/ድምጺ ብቀጥታ ካብ ጋለሪ ስልኪ ምረጽ',tapToCount:'ንምቑጻር ጠውቕ',reset:'ዳግም ጀምር'};
+
+T.so={home:'Hoyga',settings:'Dejinta',add:'Ku dar',edit:'Wax ka beddel',delete:'Tirtir',save:'Kaydi',cancel:'Jooji',title:'Cinwaan',body:'Nuxur',
+ image:'Sawir',video:'Linkiga fiidiyoow',audio:'Linkiga codka',link:'Link dheeraad ah',newPost:'Boostada cusub',noPosts:'Weli boosto ma jiraan',
+ language:'Luqadda',theme:'Midabka app-ka',adminMode:'Habka Maamulaha',adminOn:'Maamuluhu waa soo galay',enterPin:'Geli PIN-ka maamulaha',wrongPin:'PIN khaldan',
+ logout:'Ka bax',socialIntro:'Nagu daba jir bogagga bulshada',feedbackIntro:'Nala wadaag fikirkaaga iyo talooyinkaaga',yourName:'Magacaaga',
+ yourMsg:'Fariintaada',submit:'Dir',submitted:'Waa la diray! Mahadsanid',submissions:'Fikradaha la helay',contactIntro:'Risaala waxaad kula xiriiri kartaa',
+ phone:'Taleefan',email:'Iimayl',address:'Cinwaanka',editContact:'Wax ka beddel macluumaadka',supportIntro:'Ka eeg hoos siyaabaha lagu taageero Risaala',
+ appName:'Machadka Islaamka ee Risaala',appTag:'Adeeg Islaami ah dhammaan',pinLabel:'Beddel PIN-ka maamulaha',newPin:'PIN cusub',saved:'Waa la kaydiyay',
+ mosqueLocator:'Raadi Masjid',qiblaFinder:'Raadi Qiblada',islamicCalendar:'Kalandarka Islaamka',todayPrayerTimes:'Waqtiyada Salaadda Maanta',
+ fajr:'Fajr',dhuhr:'Dhuhr',asr:'Asr',maghrib:'Maghrib',isha:'Ishaa',quranAndTime:'Quraanka iyo Aqoonta',mushaf:'Mushaf',tafsir:'Tafsiirka Quraanka',
+ asma:'99 Magac',spiritualPractices:'Cibaadada Maalinlaha ah',dua:'Ducada',adhkar:'Athkaar',tasbih:'Tasbiix',salawat:'Salawaat',
+ dawahBannerTxt:'Taabo si aad u booqato qaybta Da’wada',nearbyMosques:'Masaajidda U Dhow',viewMap:'Eeg khariidadda',fromNorth:'Waqooyi ka',
+ noGeo:'Adeegga goobta lama helo',getHelpTelegram:'Caawimaad ka hel Telegram',preferences:'Doorashooyin',support:'Taageero',about:'Nagu saabsan',
+ version:'Nooca',azanSound:'Codka Adhaanka',azanHint:'Ka dooro codka gallery-ga si loo ciyaaro marka waqtiga salaadda la gaaro',azanSet:'La dejiyay',
+ azanNotSet:'Lama dejin',like:'Waan jeclahay',dislike:'Ma jeclee',comment:'Faallo',writeComment:'Qor faallo…',send:'Dir',morning:'Subax',evening:'Fiid',
+ daily:'Maalinle',pickPhoto:'Sawir ka gallery-ga',pickVideo:'Fiidiyoow ka gallery-ga',pickAudio:'Cod ka gallery-ga',greet:'Assalaamu Calaykum',
+ nextPrayer:'Salaadda xigta',prayerNow:'Waa waqtiga salaadda {p}',notifOn:'Shidan',notifOff:'Damsan',offlineNeed:'Internet ayaa loo baahan yahay',
+ posted:'La daabacay',saving:'Waa la kaydinayaa…',enter:'Gal',orLink:'ama ku dheji link',notifications:'Ogeysiisyo',
+ mediaHint:'Si toos ah uga dooro sawirka/fiidiyowga/codka gallery-ga taleefanka',tapToCount:'Taabo si aad u tiriso',reset:'Dib u deji'};
+
+const HIJRI_AR=['محرم','صفر','ربيع الأول','ربيع الآخر','جمادى الأولى','جمادى الآخرة','رجب','شعبان','رمضان','شوال','ذو القعدة','ذو الحجة'];
+const HIJRI_EN=['Muharram','Safar','Rabi al-Awwal','Rabi al-Thani','Jumada al-Ula','Jumada al-Akhira','Rajab','Shaban','Ramadan','Shawwal','Dhul Qidah','Dhul Hijjah'];
+function hijriName(m){ const i=m-1; if(DATA.lang==='am') return HIJRI_MONTHS[i]; if(DATA.lang==='ar') return HIJRI_AR[i]; return HIJRI_EN[i]; }
+
+function t(k){ return (T[DATA.lang]&&T[DATA.lang][k]) || T.en[k] || T.am[k] || k; }
+function L(f){ const n=FEAT_NAMES[f.key]; if(n&&n[DATA.lang]) return n[DATA.lang]; if(DATA.lang==='am') return f.am; return f.en||f.am; }
+
+
+/* ================== HELPERS ================== */
+const BLANK='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+function cuid(){return 'p'+Math.random().toString(36).slice(2,10)+Date.now().toString(36);}
+function today(){ try{return new Date().toLocaleDateString();}catch(e){return '';} }
+function safeUrl(u){ u=(u||'').trim(); return /^https?:\/\//i.test(u)?u:''; }
+function escapeHtml(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function norm24(s){
+  s=(s||'').trim();
+  let m=s.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if(m){ let h=(+m[1])%12; if(m[3].toUpperCase()==='PM') h+=12; return String(h).padStart(2,'0')+':'+m[2]; }
+  m=s.match(/^(\d{1,2}):(\d{2})$/);
+  if(m) return String(+m[1]).padStart(2,'0')+':'+m[2];
+  return s;
+}
+function formatTime12(hhmm){
+  const p=(hhmm||'').split(':'); if(p.length<2) return hhmm||'--:--';
+  const h=parseInt(p[0],10); const ap=h>=12?'PM':'AM'; let h12=h%12; if(h12===0) h12=12;
+  return h12+':'+p[1]+' '+ap;
+}
+
+/* ================== STORAGE ================== */
+function defaultData(){
+  const feedKeys=['about','charity','quran','dawah_urban','dawah_rural','courses','news','worship','support','social_extra',
+    'worship_mushaf','worship_tafsir','worship_dua','worship_adhkar','worship_salawat'];
+  const posts={}; feedKeys.forEach(k=>posts[k]=[]);
+  posts.about.push({id:cuid(),title:'እንኳን ደህና መጡ',body:'ሪሳላ ኢስላማዊ ፋውንዴሽን የተለያዩ ኢስላማዊ አገልግሎቶችን የሚሰጥ ተቋም ነው። ይህንን ገጽ በአድሚን ፓናል በኩል በዝርዝር መረጃ ማዘመን ይችላሉ።',date:today()});
+  return {
+    lang:'am', theme:'gold', admin:false, adminPin:'1234', notif:true, userName:'',
+    posts, feedback:[], social:{}, counters:{}, tasbihCounts:{},
+    contact:{phone:'',email:'',address:'',mapLink:''},
+    prayerTimes:{fajr:'04:56',dhuhr:'12:16',asr:'15:32',maghrib:'18:17',isha:'19:25'},
+    supportLink:'https://t.me/risala_eslamic_foundaion', azanId:''
+  };
+}
+function saveData(d){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }catch(e){ console.log('save failed',e); } }
+function loadData(){
+  const d=defaultData();
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      const s=JSON.parse(raw);
+      const m=Object.assign({},d,s);
+      m.posts=Object.assign({},d.posts,s.posts||{});
+      m.contact=Object.assign({},d.contact,s.contact||{});
+      m.prayerTimes=Object.assign({},d.prayerTimes,s.prayerTimes||{});
+      Object.keys(m.prayerTimes).forEach(k=>m.prayerTimes[k]=norm24(m.prayerTimes[k]));
+      if(!THEMES.find(x=>x.k===m.theme)) m.theme='gold';
+      if(!LANGS.find(x=>x.k===m.lang)) m.lang='am';
+      return m;
+    }
+  }catch(e){}
+  saveData(d); return d;
+}
+/* ===== Modern line icons (replace emoji icons) ===== */
+const IC_PATHS={
+  home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
+  news:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+  grad:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>',
+  moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+  mosque:'<path d="M3 21h18"/><path d="M5 21v-7a7 7 0 0 1 14 0v7"/><path d="M12 7V3.5"/><path d="M10.5 3.5h3"/>',
+  kaaba:'<rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 11h16M9 21v-6h6v6"/>',
+  heart:'<path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/>',
+  book:'<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
+  megaphone:'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/>',
+  phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+  chat:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  bell:'<path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',
+  calendar:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  headphones:'<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
+  pin:'<path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+  compass:'<circle cx="12" cy="12" r="10"/><path d="M16.2 7.8 14 14l-6.2 2.2L10 10z"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
+  sparkle:'<path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/>',
+  key:'<circle cx="8" cy="15" r="4"/><path d="M10.9 12.1 21 2M18 5l3 3M15 8l2 2"/>',
+  plane:'<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.2.6-.6.5-1.1z"/>',
+  music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  settings:'<path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h10M18 18h2"/><circle cx="16" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="18" r="2"/>',
+  trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>',
+  thumbUp:'<path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2 2 0 0 1 2 2v4h7a2 2 0 0 1 2 2l-2 8a2 2 0 0 1-2 2H7"/>',
+  camera:'<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
+  video:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4z"/>',
+  mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
+  map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  beads:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>',
+  touch:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>',
+  palette:'<circle cx="12" cy="12" r="10"/><circle cx="8" cy="10" r="1.2"/><circle cx="12" cy="7.5" r="1.2"/><circle cx="16" cy="10" r="1.2"/>',
+  speaker:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',
+  help:'<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>',
+  pencil:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  close:'<path d="M18 6 6 18M6 6l12 12"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  checkCircle:'<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>',
+  alert:'<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>'
+};
+const IC_MAP={'🏠':'home','📰':'news','🎓':'grad','☪':'moon','🕌':'mosque','🕋':'kaaba','🤲':'heart','💚':'heart','📖':'book','📚':'book',
+  '📢':'megaphone','📞':'phone','💬':'chat','🔔':'bell','📅':'calendar','🎧':'headphones','📍':'pin','🧭':'compass','🔗':'link','✨':'sparkle',
+  '🔑':'key','✈':'plane','🎵':'music','👤':'user','⚙':'settings','🗑':'trash','👍':'thumbUp','👎':'thumbDown','📷':'camera','🎬':'video',
+  '✉':'mail','🗺':'map','📿':'beads','👆':'touch','🌐':'globe','🎨':'palette','🔊':'speaker','❓':'help','✎':'pencil','✕':'close',
+  '✓':'check','✅':'checkCircle','⚠':'alert'};
+function icSvg(name){
+  const body=name==='thumbDown'?'<g transform="rotate(180 12 12)">'+IC_PATHS.thumbUp+'</g>':IC_PATHS[name];
+  return '<svg class="mi" viewBox="0 0 24 24" aria-hidden="true">'+body+'</svg>';
+}
+function modernIcons(root){
+  if(!root||!root.ownerDocument) return;
+  const w=root.ownerDocument.createTreeWalker(root,NodeFilter.SHOW_TEXT,null);
+  const nodes=[]; while(w.nextNode()) nodes.push(w.currentNode);
+  const re=new RegExp('('+Object.keys(IC_MAP).join('|')+')\\uFE0F?','gu');
+  nodes.forEach(function(n){
+    const v=n.nodeValue; re.lastIndex=0; if(!re.test(v)) return; re.lastIndex=0;
+    const parts=v.split(re); const frag=root.ownerDocument.createDocumentFragment(); let changed=false;
+    parts.forEach(function(p){
+      if(!p) return;
+      const base=p.replace(/\uFE0F/g,'');
+      if(IC_MAP[base]){ changed=true; const sp=root.ownerDocument.createElement('span'); sp.innerHTML=icSvg(IC_MAP[base]); frag.appendChild(sp.firstChild); }
+      else frag.appendChild(root.ownerDocument.createTextNode(p));
+    });
+    if(changed) n.parentNode.replaceChild(frag,n);
+  });
+}
+(function(){
+  const st=document.createElement('style');
+  st.textContent='.mi{display:inline-block;width:1.2em;height:1.2em;vertical-align:-0.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}';
+  document.head.appendChild(st);
+})();
+/* ===== Appwrite backend (shared data) ===== */
+const AW={ep:'https://sfo.cloud.appwrite.io/v1',proj:'6ae394c50030594506f9',db:'6ae3967b00112bbef6c4',
+  T:{posts:'6ae39778003091aabbd8',reactions:'6ae3a1c1002e480ace54',comments:'6ae3a3460003e6847170'}};
+function awReq(method,path,body){
+  return fetch(AW.ep+path,{method:method,credentials:'include',
+    headers:Object.assign({'X-Appwrite-Project':AW.proj},body?{'Content-Type':'application/json'}:{}),
+    body:body?JSON.stringify(body):undefined})
+  .then(async function(r){ const j=await r.json().catch(function(){return {};});
+    if(!r.ok) throw new Error(j.message||('HTTP '+r.status)); return j; });
+}
+function awRowPath(tid,rid){ return '/tablesdb/'+AW.db+'/tables/'+tid+'/rows'+(rid?'/'+rid:''); }
+function awRows(tid){ return awReq('GET',awRowPath(tid)+'?queries[]='+encodeURIComponent('limit(1000)')).then(function(j){return j.rows||[];}); }
+function awDevice(){ let d=localStorage.getItem('risala_device'); if(!d){ d='d'+Math.random().toString(36).slice(2,12); localStorage.setItem('risala_device',d); } return d; }
+function fmtDate(iso){ try{ return new Date(iso).toLocaleDateString(); }catch(e){ return ''; } }
+function awDel(tid,rid){ if(!rid) return; awReq('DELETE',awRowPath(tid,rid)).catch(function(e){ toast('⚠ '+e.message); }); }
+async function awCheckAdmin(){ try{ await awReq('GET','/account'); return true; }catch(e){ return false; } }
+async function awLogin(email,pass){ await awReq('POST','/account/sessions/email',{email:email,password:pass}); }
+async function awLogout(){ try{ await awReq('DELETE','/account/sessions/current'); }catch(e){} }
+async function awCreatePost(key,post){
+  try{
+    const r=await awReq('POST',awRowPath(AW.T.posts),{rowId:'unique()',data:{section:key,kind:'text',title:post.title||'',body:post.body||'',mediaUrl:post.video||'',link:post.link||''}});
+    post.id=r.$id;
+  }catch(e){ toast('⚠ '+e.message); }
+}
+async function awReact(postId,mine){
+  const dev=awDevice(); const rid=(postId+'_'+dev).slice(0,36); const data={postId:postId,deviceId:dev,value:mine||'none'};
+  try{ await awReq('PATCH',awRowPath(AW.T.reactions,rid),{data:data}); }
+  catch(e){ try{ await awReq('POST',awRowPath(AW.T.reactions),{rowId:rid,data:data}); }catch(e2){ toast('⚠ '+e2.message); } }
+}
+async function awComment(postId,name,text){
+  try{ const r=await awReq('POST',awRowPath(AW.T.comments),{rowId:'unique()',data:{postId:postId,name:name,text:text}}); return r.$id; }
+  catch(e){ toast('⚠ '+e.message); return null; }
+}
+async function awSync(){
+  try{
+    const res=await Promise.all([awRows(AW.T.posts),awRows(AW.T.reactions),awRows(AW.T.comments)]);
+    const posts=res[0], reacts=res[1], cmts=res[2];
+    const fresh={}; Object.keys(DATA.posts).forEach(function(k){ fresh[k]=[]; });
+    posts.forEach(function(r){
+      if(!fresh[r.section]) fresh[r.section]=[];
+      fresh[r.section].push({id:r.$id,title:r.title||'',body:r.body||'',video:r.mediaUrl||'',link:r.link||'',date:fmtDate(r.$createdAt)});
+    });
+    if(!fresh.about.length && DATA.posts.about) fresh.about=DATA.posts.about;
+    const social={};
+    const get=function(id){ return social[id]||(social[id]={like:0,dislike:0,mine:null,comments:[]}); };
+    const dev=awDevice();
+    reacts.forEach(function(r){
+      const s=get(r.postId);
+      if(r.value==='like') s.like++; else if(r.value==='dislike') s.dislike++;
+      if(r.deviceId===dev) s.mine=(r.value==='like'||r.value==='dislike')?r.value:null;
+    });
+    cmts.slice().sort(function(a,b){ return a.$createdAt<b.$createdAt?-1:1; }).forEach(function(r){
+      get(r.postId).comments.push({name:r.name||'—',text:r.text||'',date:fmtDate(r.$createdAt),cloudId:r.$id});
+    });
+    DATA.posts=fresh; DATA.social=social; saveData(DATA);
+  }catch(e){ console.log('sync failed',e); }
+}
+async function awInit(){
+  DATA.admin=await awCheckAdmin(); saveData(DATA);
+  await awSync(); render();
+}
+let DATA=loadData();
+
+/* ================== MEDIA STORE (IndexedDB - works offline, big files) ================== */
+let _db=null; const _urlCache={};
+function mediaDB(){
+  return new Promise((res,rej)=>{
+    if(_db) return res(_db);
+    if(!window.indexedDB) return rej(new Error('no idb'));
+    const r=indexedDB.open('risala_media_v1',1);
+    r.onupgradeneeded=()=>{ r.result.createObjectStore('blobs'); };
+    r.onsuccess=()=>{ _db=r.result; res(_db); };
+    r.onerror=()=>rej(r.error);
+  });
+}
+async function mediaPut(blob){
+  const id='m'+cuid(); const db=await mediaDB();
+  await new Promise((res,rej)=>{ const tx=db.transaction('blobs','readwrite'); tx.objectStore('blobs').put(blob,id); tx.oncomplete=res; tx.onerror=()=>rej(tx.error); });
+  return id;
+}
+async function mediaGet(id){
+  const db=await mediaDB();
+  return new Promise((res,rej)=>{ const rq=db.transaction('blobs').objectStore('blobs').get(id); rq.onsuccess=()=>res(rq.result); rq.onerror=()=>rej(rq.error); });
+}
+async function mediaDel(id){
+  if(!id) return;
+  try{ const db=await mediaDB(); await new Promise(res=>{ const tx=db.transaction('blobs','readwrite'); tx.objectStore('blobs').delete(id); tx.oncomplete=res; tx.onerror=res; }); }catch(e){}
+  if(_urlCache[id]){ try{URL.revokeObjectURL(_urlCache[id]);}catch(e){} delete _urlCache[id]; }
+}
+async function mediaURL(id){
+  if(_urlCache[id]) return _urlCache[id];
+  try{ const b=await mediaGet(id); if(!b) return ''; return (_urlCache[id]=URL.createObjectURL(b)); }catch(e){ return ''; }
+}
+function hydrateMedia(){
+  document.querySelectorAll('[data-mid]').forEach(async el=>{
+    const u=await mediaURL(el.getAttribute('data-mid'));
+    if(u){ el.src=u; if(el.load && el.tagName!=='IMG') el.load(); }
+  });
+}
+
+/* ================== TOAST / NOTIFY ================== */
+function toast(msg){
+  const d=document.createElement('div'); d.className='toast'; d.textContent=msg;
+  document.body.appendChild(d); setTimeout(()=>{ d.style.transition='opacity .4s'; d.style.opacity='0'; setTimeout(()=>d.remove(),450); },3200);
+}
+function notify(title,body){
+  toast('🔔 '+title+(body?' — '+body:''));
+  try{ if(navigator.vibrate) navigator.vibrate([200,100,200]); }catch(e){}
+  try{
+    if('Notification' in window && Notification.permission==='granted'){
+      const opt={body:body||'',icon:'icon-192.png',badge:'icon-192.png',tag:'risala-prayer'};
+      if(navigator.serviceWorker && navigator.serviceWorker.ready){ navigator.serviceWorker.ready.then(r=>r.showNotification(title,opt)).catch(()=>{ try{ new Notification(title,opt); }catch(e){} }); }
+      else new Notification(title,opt);
+    }
+  }catch(e){}
+}
+function toggleNotif(){
+  DATA.notif=!DATA.notif; saveData(DATA);
+  if(DATA.notif){ try{ if('Notification' in window && Notification.permission==='default') Notification.requestPermission(); }catch(e){} }
+  render();
+}
+function extLink(){ if(!navigator.onLine){ toast(t('offlineNeed')); return false; } return true; }
+function openExternal(url){ if(!extLink()) return; window.open(url,'_blank','noopener,noreferrer'); }
+
+/* ================== THEME ================== */
+function applyTheme(){
+  const th=THEMES.find(x=>x.k===DATA.theme)||THEMES[0]; const h=document.documentElement;
+  h.setAttribute('data-theme',th.k); h.setAttribute('data-mode',th.mode);
+  h.setAttribute('lang',DATA.lang); h.setAttribute('dir',DATA.lang==='ar'?'rtl':'ltr');
+}
+
+/* ================== ROUTER + RENDER ================== */
+let ROUTE={page:'home'}; let OPEN_CMT={}; let lastSig='';
+const appEl=document.getElementById('app');
+const WORSHIP_PAGES=['sub','asma','tasbih','duaLike','salawat','tracker','qaida'];
+
+function feedKeyForPage(){
+  if(ROUTE.page==='feature'){
+    const f=FEATURES.find(x=>x.key===ROUTE.key); if(!f) return null;
+    if(f.type==='feed') return f.key;
+    if(f.type==='tabs') return ROUTE.tab;
+    if(f.type==='social') return 'social_extra';
+    return null;
+  }
+  if(ROUTE.page==='sub') return ROUTE.key;
+  if(ROUTE.page==='duaLike') return ROUTE.cat==='adhkar'?'worship_adhkar':'worship_dua';
+  if(ROUTE.page==='salawat') return 'worship_salawat';
+  return null;
+}
+function navActive(k){
+  if(k==='home') return ROUTE.page==='home';
+  if(k==='settings') return ROUTE.page==='settings';
+  if(k==='worship') return (ROUTE.page==='feature'&&ROUTE.key==='worship')||WORSHIP_PAGES.includes(ROUTE.page);
+  return ROUTE.page==='feature'&&ROUTE.key===k;
+}
+function navBtn(k,icon,label,fn,extra){
+  return `<button class="${extra||''} ${navActive(k)?'active':''}" onclick="${fn}"><span class="ni">${icon}</span><span class="navLabel">${label}</span></button>`;
+}
+
+
+/* ================== AI CHAT ================== */
+/* Paste your Appwrite Function URL here (see ai-function/README). Empty = AI not connected yet. */
+const AI_ENDPOINT = 'https://starter-function-4qdh.sfo.appwrite.run';
+const QAIDA_ICON_URI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZCNzAzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkI4NTAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iNTYiIGZpbGw9InVybCgjZykiLz4KPGNpcmNsZSBjeD0iMTI4IiBjeT0iODAiIHI9IjM0IiBmaWxsPSIjRkZGM0M0Ii8+CjxwYXRoIGQ9Ik0xMTggNjJhMzQgMzQgMCAxIDAgMzAgNTJhMjggMjggMCAxIDEtMzAtNTJ6IiBmaWxsPSIjRkZCNzAzIi8+CjxwYXRoIGQ9Ik00MCAxNTBxNDQtMjIgODggMHY2NHEtNDQtMjItODggMHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTIxNiAxNTBxLTQ0LTIyLTg4IDB2NjRxNDQtMjIgODggMHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTQwIDE1MHE0NC0yMiA4OCAwcTQ0LTIyIDg4IDB2NjRxLTQ0LTIyLTg4IDBxLTQ0LTIyLTg4IDB6IiBmaWxsPSJub25lIiBzdHJva2U9IiMwQjZFNEYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8bGluZSB4MT0iMTI4IiB5MT0iMTUwIiB4Mj0iMTI4IiB5Mj0iMjE0IiBzdHJva2U9IiMwQjZFNEYiIHN0cm9rZS13aWR0aD0iNiIvPgo8dGV4dCB4PSI4NCIgeT0iMTk2IiBmb250LXNpemU9IjM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMEI2RTRGIiBmb250LWZhbWlseT0iTm90byBOYXNraCBBcmFiaWMsIEFtaXJpLCBzZXJpZiI+2Kc8L3RleHQ+Cjx0ZXh0IHg9IjE3MiIgeT0iMTk2IiBmb250LXNpemU9IjM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMEI2RTRGIiBmb250LWZhbWlseT0iTm90byBOYXNraCBBcmFiaWMsIEFtaXJpLCBzZXJpZiI+2Kg8L3RleHQ+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTIiIHI9IjYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii44Ii8+PGNpcmNsZSBjeD0iMjA2IiBjeT0iNTAiIHI9IjUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii44Ii8+Cjwvc3ZnPg==';
+const AI_ICON_URI = 'data:image/jpeg;base64,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';
+let AI_HISTORY = [{role:'assistant', content:'ሰላምአለይኩም! ስለ ኢስላም ማንኛውንም ጥያቄ ይጠይቁ።'}];
+let AI_BUSY = false;
+function aiEsc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function openAI(){ ROUTE={page:'ai'}; render(); }
+function renderAI(){
+  const msgs = AI_HISTORY.map(m=>`<div class="aiMsg ${m.role==='user'?'user':'assistant'}"><div class="aiBub">${aiEsc(m.content)}</div></div>`).join('');
+  const typing = AI_BUSY ? `<div class="aiMsg assistant"><div class="aiBub">…</div></div>` : '';
+  return `<div class="aiWrap">
+    <div class="aiNote">⚠️ ይህ ረዳት ትምህርታዊ መረጃ ብቻ ይሰጣል። ፈትዋና ውሳኔ ለሚመለከታቸው ዓሊሞች ይተዉ።</div>
+    <div class="aiList" id="aiList">${msgs}${typing}</div>
+    <div class="aiForm">
+      <input id="aiIn" placeholder="ጥያቄዎን ይጻፉ…" onkeydown="if(event.key==='Enter')sendAI()" ${AI_BUSY?'disabled':''}>
+      <button class="aiSend" onclick="sendAI()" ${AI_BUSY?'disabled':''}>${t('send')||'ላክ'}</button>
+    </div>
+  </div>`;
+}
+async function sendAI(){
+  const inp = document.getElementById('aiIn');
+  const q = (inp && inp.value || '').trim();
+  if(!q || AI_BUSY) return;
+  AI_HISTORY.push({role:'user', content:q});
+  AI_BUSY = true; render();
+  let reply;
+  try{
+    if(!AI_ENDPOINT){
+      reply = 'የAI አገልግሎቱ ገና አልተገናኘም። እስከዚያው ድረስ በቴሌግራም ይጠይቁን።';
+    }else{
+      // text/plain avoids a CORS preflight request; the function parses the JSON body itself
+      const r = await fetch(AI_ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify({messages: AI_HISTORY.slice(-12).map(m=>({role:m.role, content:m.content}))})
+      });
+      const j = await r.json().catch(()=>({}));
+      reply = j.reply || j.error || ('ስህተት ተከስቷል (ኮድ ' + r.status + ')። እንደገና ይሞክሩ።');
+    }
+  }catch(e){
+    reply = 'ከአገልጋዩ ጋር መገናኘት አልተቻለም። ኢንተርኔትዎን ያረጋግጡ። (' + (e && e.message ? e.message : 'unknown') + ')';
+  }
+  AI_HISTORY.push({role:'assistant', content:reply});
+  AI_BUSY = false; render();
+}
+
+function render(){
+  applyTheme();
+  const sig=[ROUTE.page,ROUTE.key,ROUTE.tab,ROUTE.dtab,ROUTE.ttab,ROUTE.cat].join('|');
+  const y=(sig===lastSig)?window.scrollY:0; lastSig=sig;
+  let title=t('appName'), body='';
+  if(ROUTE.page==='home') body=renderHome();
+  else if(ROUTE.page==='settings'){ title=t('settings'); body=renderSettings(); }
+  else if(ROUTE.page==='feature'){ const f=FEATURES.find(x=>x.key===ROUTE.key); title=L(f); body=renderFeature(f); }
+  else if(ROUTE.page==='sub'){ title=ROUTE.subTitle; body=renderFeed(ROUTE.key); }
+  else if(ROUTE.page==='asma'){ title=t('asma'); body=renderAsma(); }
+  else if(ROUTE.page==='tasbih'){ title=t('tasbih'); body=renderTasbih(); }
+  else if(ROUTE.page==='duaLike'){ title=ROUTE.cat==='adhkar'?t('adhkar'):t('dua'); body=renderDuaLike(); }
+  else if(ROUTE.page==='salawat'){ title=t('salawat'); body=renderSalawatPage(); }
+  else if(ROUTE.page==='ai'){ title='ኢስላማዊ ጥያቄ 🤖'; body=renderAI(); }
+  else if(ROUTE.page==='tracker'){ title='የዕለታዊ ኢባዳ ✅'; body=renderTracker(); }
+  else if(ROUTE.page==='qaida'){ title='ቃኢዳ ኑራኒያ'; body=renderQaida(); }
+  const showBack=ROUTE.page!=='home';
+  const nf=k=>L(FEATURES.find(f=>f.key===k));
+  const right=ROUTE.page==='tasbih'?`<button class="iconBtn" onclick="resetTasbihCurrent()">⟳</button>`:(DATA.admin?`<span class="iconBtn">👤</span>`:'');
+  const fk=feedKeyForPage();
+  appEl.innerHTML=`
+    <div class="shell">
+      <header>
+        ${showBack?`<button class="backBtn" onclick="goBack()">‹</button>`:`<div class="backBtn" style="opacity:0;pointer-events:none;">‹</div>`}
+        <img class="headerLogo" src="${LOGO_URI}" alt="">
+        <div class="titleWrap"><p class="appTitle">${title}</p><p class="subTitle">${ROUTE.page==='home'?t('appTag'):''}</p></div>
+        ${right}
+      </header>
+      <main id="mainArea">${body}</main>
+      ${(fk&&DATA.admin)?`<button class="fab" onclick="openAddPost()">+</button>`:''}
+      <nav class="bottom">
+        ${navBtn('home','🏠',t('home'),'goHome()')}
+        ${navBtn('news','📰',nf('news'),"openFeature('news')")}
+        ${navBtn('courses','🎓',nf('courses'),"openFeature('courses')")}
+        ${navBtn('worship','☪️',nf('worship'),"openFeature('worship')",'navHighlight')}
+        ${navBtn('settings','⚙️',t('settings'),'goSettings()')}
+      </nav>
+    </div>`;
+  window.scrollTo(0,y);
+  hydrateMedia();
+}
+
+function openFeature(key){
+  const f=FEATURES.find(x=>x.key===key); ROUTE={page:'feature',key,tab:(f&&f.type==='tabs')?f.tabs[0].key:null}; render();
+}
+function goHome(){ ROUTE={page:'home'}; render(); }
+function goSettings(){ ROUTE={page:'settings'}; render(); }
+function goBack(){ if(ROUTE.page==='feature' && ROUTE.key==='kids' && KIDS.game){ KIDS.game=null; KIDS.msg=''; render(); return; } if(ROUTE.page==='qaida' && ROUTE.lesson!=null){ ROUTE={page:'qaida',lesson:null}; render(); return; } if(WORSHIP_PAGES.includes(ROUTE.page)) ROUTE={page:'feature',key:'worship'}; else ROUTE={page:'home'}; render(); }
+function setTab(k){ ROUTE.tab=k; render(); }
+
+/* ================== HOME ================== */
+function nextPrayerText(){
+  const pt=DATA.prayerTimes||{}; const order=['fajr','dhuhr','asr','maghrib','isha'];
+  const now=new Date(); const nm=now.getHours()*60+now.getMinutes(); let best=null;
+  for(const k of order){ if(!pt[k]) continue; const [h,m]=pt[k].split(':').map(Number); const mins=h*60+m; if(mins>nm){ best={k,mins}; break; } }
+  if(!best){ if(!pt.fajr) return ''; const [h,m]=pt.fajr.split(':').map(Number); best={k:'fajr',mins:h*60+m+1440}; }
+  const diff=best.mins-nm; return '🕋 '+t('nextPrayer')+': '+t(best.k)+' · '+Math.floor(diff/60)+':'+String(diff%60).padStart(2,'0');
+}
+function renderHome(){
+  const cards=FEATURES.map((f,i)=>`
+    <div class="card" style="--tile:${f.hue};animation-delay:${i*45}ms" onclick="openFeature('${f.key}')">
+      <div class="ic">${typeof f.icon==='function'?f.icon():f.icon}</div><div class="lbl">${L(f)}</div>
+    </div>`).join('');
+  const h=gregorianToHijri(new Date());
+  return `
+    <div class="hero">
+      <img class="heroLogo" src="${LOGO_URI}" alt="">
+      <div class="greet">${t('greet')}</div>
+      <h2>${t('appName')}</h2>
+      <p>${t('appTag')}</p>
+      <div class="heroChips"><span class="chip">📅 ${h.day} ${hijriName(h.month)} ${h.year}</span><span class="chip" id="nextPrayer">${nextPrayerText()}</span></div>
+    </div>
+    <div class="grid">${cards}</div>`;
+}
+
+/* ================== FEEDS + POSTS ================== */
+function renderFeature(f){
+  if(f.type==='ai') return renderAI();
+  if(f.type==='kids') return renderKids();
+  if(f.type==='social') return renderSocial();
+  if(f.type==='feedback') return renderFeedback();
+  if(f.type==='contact') return renderContact();
+  if(f.type==='tabs') return renderTabsFeed(f);
+  if(f.type==='worship') return renderWorship();
+  return renderFeed(f.key);
+}
+function renderTabsFeed(f){
+  return `<div class="tabs">${f.tabs.map(tb=>`<div class="tab ${ROUTE.tab===tb.key?'active':''}" onclick="setTab('${tb.key}')">${L(tb)}</div>`).join('')}</div>`+renderFeed(ROUTE.tab);
+}
+function renderFeed(key){
+  const posts=(DATA.posts[key]||[]).slice().reverse();
+  if(!posts.length) return `<div class="empty">${t('noPosts')}</div>`;
+  return posts.map(p=>renderPost(p,key)).join('');
+}
+function ytEmbed(u){
+  u=safeUrl(u); if(!u) return '';
+  const m=u.match(/(?:youtu\.be\/|v=|shorts\/)([A-Za-z0-9_-]{6,})/);
+  if(m&&navigator.onLine) return `<iframe src="https://www.youtube.com/embed/${m[1]}" allowfullscreen></iframe>`;
+  return `<a class="linkBtn" href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer" onclick="return extLink()">▶ ${t('video')}</a>`;
+}
+function socialOf(id){ return DATA.social[id]||(DATA.social[id]={like:0,dislike:0,mine:null,comments:[]}); }
+function renderPost(p,key){
+  let media='';
+  if(p.imgId) media+=`<img data-mid="${p.imgId}" src="${BLANK}" alt="">`;
+  else if(p.img) media+=`<img src="${p.img}" alt="">`;
+  if(p.vidId) media+=`<video data-mid="${p.vidId}" controls playsinline preload="metadata"></video>`;
+  if(p.video) media+=ytEmbed(p.video);
+  if(p.audId) media+=`<audio data-mid="${p.audId}" controls></audio>`;
+  else if(safeUrl(p.audio)) media+=`<audio controls src="${escapeHtml(safeUrl(p.audio))}"></audio>`;
+  const lk=safeUrl(p.link);
+  const linkBtn=lk?`<a class="linkBtn" href="${escapeHtml(lk)}" target="_blank" rel="noopener noreferrer" onclick="return extLink()">🔗 ${t('link')}</a>`:'';
+  const s=socialOf(p.id);
+  const open=!!OPEN_CMT[p.id];
+  const cm=open?`<div class="cmts">
+      ${s.comments.map((c,i)=>`<div class="cmt">${DATA.admin?`<button class="del" onclick="delComment('${p.id}',${i})">✕</button>`:''}<b>${escapeHtml(c.name)}</b>${escapeHtml(c.text)}<br><small>${escapeHtml(c.date)}</small></div>`).join('')}
+      <div class="cmtForm">
+        <input type="text" id="cn_${p.id}" placeholder="${t('yourName')}" value="${escapeHtml(DATA.userName)}">
+        <div class="row"><input type="text" id="ct_${p.id}" placeholder="${t('writeComment')}"><button onclick="addComment('${p.id}')">${t('send')}</button></div>
+      </div></div>`:'';
+  const actions=DATA.admin?`<div class="postActions"><button onclick="deletePost('${key}','${p.id}')">🗑 ${t('delete')}</button></div>`:'';
+  return `<div class="post">
+    ${p.title?`<h4>${escapeHtml(p.title)}</h4>`:''}
+    ${p.body?`<p>${escapeHtml(p.body)}</p>`:''}
+    ${media}${linkBtn}
+    <div class="meta">${escapeHtml(p.date||'')}</div>
+    <div class="react">
+      <button class="rb ${s.mine==='like'?'on':''}" onclick="react('${p.id}','like')">👍 ${t('like')} ${s.like||''}</button>
+      <button class="rb ${s.mine==='dislike'?'on':''}" onclick="react('${p.id}','dislike')">👎 ${s.dislike||''}</button>
+      <button class="rb ${open?'on':''}" onclick="toggleCmt('${p.id}')">💬 ${s.comments.length||''}</button>
+    </div>
+    ${cm}${actions}
+  </div>`;
+}
+function react(id,type){
+  const s=socialOf(id);
+  if(s.mine===type){ s[type]=Math.max(0,s[type]-1); s.mine=null; }
+  else { if(s.mine) s[s.mine]=Math.max(0,s[s.mine]-1); s[type]++; s.mine=type; }
+  saveData(DATA); render(); awReact(id,s.mine);
+}
+function toggleCmt(id){ OPEN_CMT[id]=!OPEN_CMT[id]; render(); }
+function addComment(id){
+  const n=document.getElementById('cn_'+id).value.trim(); const tx=document.getElementById('ct_'+id).value.trim();
+  if(!tx) return; if(n) DATA.userName=n;
+  const cm={name:n||DATA.userName||'—',text:tx.slice(0,500),date:today()}; socialOf(id).comments.push(cm);
+  saveData(DATA); render();
+  awComment(id,cm.name,cm.text).then(function(cid){ cm.cloudId=cid; saveData(DATA); });
+}
+function delComment(id,i){ awDel(AW.T.comments,(socialOf(id).comments[i]||{}).cloudId); socialOf(id).comments.splice(i,1); saveData(DATA); render(); }
+async function deletePost(key,id){
+  awDel(AW.T.posts,id);
+  const p=(DATA.posts[key]||[]).find(x=>x.id===id);
+  if(p){ await mediaDel(p.imgId); await mediaDel(p.vidId); await mediaDel(p.audId); }
+  DATA.posts[key]=(DATA.posts[key]||[]).filter(x=>x.id!==id); delete DATA.social[id];
+  saveData(DATA); render();
+}
+
+/* ---- add post (photo / video / audio straight from gallery) ---- */
+function openAddPost(key){
+  key=key||feedKeyForPage(); if(!key) return;
+  openModal(`
+    <button class="closeX" onclick="closeModal()">✕</button>
+    <h3>${t('newPost')}</h3>
+    <div class="field"><label>${t('title')}</label><input type="text" id="f_title"></div>
+    <div class="field"><label>${t('body')}</label><textarea id="f_body"></textarea></div>
+    <p class="hint">${t('mediaHint')}</p>
+    <div class="field"><label>📷 ${t('pickPhoto')}</label><input type="file" id="f_img" accept="image/*"></div>
+    <div class="field"><label>🎬 ${t('pickVideo')}</label><input type="file" id="f_vid" accept="video/*"></div>
+    <div class="field"><label>🎧 ${t('pickAudio')}</label><input type="file" id="f_aud" accept="audio/*"></div>
+    <p class="hint">${t('orLink')}</p>
+    <div class="field"><label>${t('video')}</label><input type="url" id="f_video" placeholder="https://youtube.com/..."></div>
+    <div class="field"><label>${t('link')}</label><input type="url" id="f_link" placeholder="https://..."></div>
+    <div class="btnRow"><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button>
+    <button class="btn primary" id="postBtn" onclick="submitPost('${key}')">${t('save')}</button></div>`);
+}
+async function submitPost(key){
+  const btn=document.getElementById('postBtn'); if(btn){ btn.disabled=true; btn.textContent=t('saving'); }
+  const g=id=>document.getElementById(id);
+  const post={id:cuid(),title:g('f_title').value.trim(),body:g('f_body').value.trim(),video:safeUrl(g('f_video').value),link:safeUrl(g('f_link').value),date:today()};
+  try{
+    const fi=g('f_img').files[0], fv=g('f_vid').files[0], fa=g('f_aud').files[0];
+    if(fi) post.imgId=await mediaPut(fi);
+    if(fv) post.vidId=await mediaPut(fv);
+    if(fa) post.audId=await mediaPut(fa);
+  }catch(e){ toast('⚠ '+e.message); if(btn){btn.disabled=false;btn.textContent=t('save');} return; }
+  if(!DATA.posts[key]) DATA.posts[key]=[];
+  DATA.posts[key].push(post); closeModal(); render();
+  awCreatePost(key,post).then(function(){ saveData(DATA); render(); toast('✅ '+t('posted')); });
+}
+
+/* ================== SOCIAL / FEEDBACK / CONTACT ================== */
+function renderSocial(){
+  return `<div class="sectionIntro"><p>${t('socialIntro')}</p></div>`+
+    SOCIAL_LINKS.map(s=>`<a class="socialBtn" href="${s.url}" target="_blank" rel="noopener noreferrer" onclick="return extLink()"><div class="ic" style="background:${s.color}">${s.ic}</div><div>${DATA.lang==='am'?s.name:s.en}</div></a>`).join('')+
+    renderFeed('social_extra');
+}
+function renderFeedback(){
+  let list='';
+  if(DATA.admin){
+    const items=DATA.feedback.slice().reverse();
+    list=`<div class="sectionIntro"><h3>${t('submissions')}</h3></div>`+(items.length?items.map(fb=>`<div class="post"><h4>${escapeHtml(fb.name)}</h4><p>${escapeHtml(fb.msg)}</p><div class="meta">${escapeHtml(fb.date)}</div></div>`).join(''):`<div class="empty">${t('noPosts')}</div>`);
+  }
+  return `<div class="sectionIntro"><p>${t('feedbackIntro')}</p></div>
+    <div class="post"><div class="field"><label>${t('yourName')}</label><input type="text" id="fb_name" value="${escapeHtml(DATA.userName)}"></div>
+    <div class="field"><label>${t('yourMsg')}</label><textarea id="fb_msg"></textarea></div>
+    <button class="btn primary" style="width:100%" onclick="submitFeedback()">${t('submit')}</button></div>${list}`;
+}
+function submitFeedback(){
+  const name=document.getElementById('fb_name').value.trim(), msg=document.getElementById('fb_msg').value.trim();
+  if(!msg) return; if(name) DATA.userName=name;
+  DATA.feedback.push({name:name||'—',msg,date:today()}); saveData(DATA); toast('✅ '+t('submitted')); render();
+}
+function renderContact(){
+  const c=DATA.contact; const mp=safeUrl(c.mapLink);
+  return `<div class="sectionIntro"><p>${t('contactIntro')}</p></div>
+    <div class="contactCard">
+      <div class="row"><div class="k">📞</div><div>${escapeHtml(c.phone)||'—'}</div></div>
+      <div class="row"><div class="k">✉️</div><div>${escapeHtml(c.email)||'—'}</div></div>
+      <div class="row"><div class="k">📍</div><div>${escapeHtml(c.address)||'—'}</div></div>
+      ${mp?`<div class="row"><div class="k">🗺️</div><a href="${escapeHtml(mp)}" target="_blank" rel="noopener noreferrer" onclick="return extLink()">${t('viewMap')}</a></div>`:''}
+    </div>
+    ${DATA.admin?`<button class="btn ghost" style="width:100%" onclick="editContact()">✎ ${t('editContact')}</button>`:''}`;
+}
+function editContact(){
+  const c=DATA.contact;
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('editContact')}</h3>
+    <div class="field"><label>${t('phone')}</label><input type="text" id="c_phone" value="${escapeHtml(c.phone)}"></div>
+    <div class="field"><label>${t('email')}</label><input type="text" id="c_email" value="${escapeHtml(c.email)}"></div>
+    <div class="field"><label>${t('address')}</label><input type="text" id="c_address" value="${escapeHtml(c.address)}"></div>
+    <div class="field"><label>Map link</label><input type="url" id="c_map" value="${escapeHtml(c.mapLink)}"></div>
+    <div class="btnRow"><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button><button class="btn primary" onclick="saveContact()">${t('save')}</button></div>`);
+}
+function saveContact(){
+  const g=id=>document.getElementById(id).value.trim();
+  DATA.contact={phone:g('c_phone'),email:g('c_email'),address:g('c_address'),mapLink:safeUrl(g('c_map'))};
+  saveData(DATA); closeModal(); render();
+}
+
+/* ================== WORSHIP CENTER ================== */
+function prayerCells(){
+  return ['fajr','dhuhr','asr','maghrib','isha'].map(k=>`<div class="prayerCell"><div class="pn">${t(k)}</div><div class="pt">${DATA.prayerTimes[k]?formatTime12(DATA.prayerTimes[k]):'--:--'}</div></div>`).join('');
+}
+function renderWorship(){
+  return `
+    <div class="actionBtnsRow">
+      <button class="actionBtn" onclick="mosqueLocator()"><span class="ic">📍</span>${t('mosqueLocator')}</button>
+      <button class="actionBtn" onclick="qiblaFinder()"><span class="ic">🧭</span>${t('qiblaFinder')}</button>
+      <button class="actionBtn" onclick="islamicCalendar()"><span class="ic">📅</span>${t('islamicCalendar')}</button>
+    </div>
+    <div class="prayerBox"><h4>${t('todayPrayerTimes')}</h4><div class="prayerRow">${prayerCells()}</div>
+      ${DATA.admin?`<button class="editTimesBtn" onclick="editPrayerTimes()">✎ ${t('edit')}</button>`:''}</div>
+    <div class="sectionLabel">${t('quranAndTime')}</div>
+    <div class="subGrid">
+      <div class="subCard" onclick="openSub('worship_mushaf','${t('mushaf')}')"><div class="ic">📖</div><div class="lbl">${t('mushaf')}</div></div>
+      <div class="subCard" onclick="openSub('worship_tafsir','${t('tafsir')}')"><div class="ic">📚</div><div class="lbl">${t('tafsir')}</div></div>
+      <div class="subCard" onclick="openAsma()"><div class="ic">✨</div><div class="lbl">${t('asma')}</div></div>
+    </div>
+    <div class="sectionLabel">${t('spiritualPractices')}</div>
+    <div class="practiceGrid">
+      <div class="subCard" onclick="openDuaPage('dua')"><div class="ic">🤲</div><div class="lbl">${t('dua')}</div></div>
+      <div class="subCard" onclick="openDuaPage('adhkar')"><div class="ic">✨</div><div class="lbl">${t('adhkar')}</div></div>
+      <div class="subCard" onclick="openTasbih()"><div class="ic">📿</div><div class="lbl">${t('tasbih')}</div></div>
+      <div class="subCard" onclick="openSalawatPage()"><div class="ic">🕌</div><div class="lbl">${t('salawat')}</div></div>
+      <div class="subCard" onclick="openTracker()"><div class="ic">✅</div><div class="lbl">የዕለታዊ ኢባዳ</div></div>
+      <div class="subCard" onclick="openQaida()"><div class="ic"><img class="qIcon" src="${QAIDA_ICON_URI}" alt=""></div><div class="lbl">ቃኢዳ ኑራኒያ (ለህፃናት)</div></div>
+    </div>
+    <div class="bannerCard" onclick="openFeature('dawah')"><h3>DAWAH</h3><p>${t('dawahBannerTxt')}</p></div>
+    <div class="recentHeader"><div class="sectionLabel" style="margin:0">${t('nearbyMosques')}</div>
+      <div style="display:flex;gap:8px;align-items:center"><button class="rBtn" onclick="mosqueLocator()">${t('viewMap')}</button><button class="refresh" onclick="render()">⟳</button></div></div>
+    ${renderFeed('worship')}`;
+}
+function openSub(key,title){ ROUTE={page:'sub',key,subTitle:title}; render(); }
+function openAsma(){ ROUTE={page:'asma'}; render(); }
+function openTasbih(){ ROUTE={page:'tasbih',ttab:'subhanallah'}; render(); }
+function openDuaPage(cat){ ROUTE={page:'duaLike',cat,dtab:'morning'}; render(); }
+function openSalawatPage(){ ROUTE={page:'salawat'}; render(); }
+function setDtab(k){ ROUTE.dtab=k; render(); }
+/* ================== QAIDA NOORANIYAH ================== */
+const QAIDA_LETTERS=[["ا", "Alif"], ["ب", "Ba"], ["ت", "Ta"], ["ث", "Tha"], ["ج", "Jim"], ["ح", "Ha"], ["خ", "Kha"], ["د", "Dal"], ["ذ", "Dhal"], ["ر", "Ra"], ["ز", "Zay"], ["س", "Sin"], ["ش", "Shin"], ["ص", "Sad"], ["ض", "Dad"], ["ط", "Ta"], ["ظ", "Za"], ["ع", "Ayn"], ["غ", "Ghayn"], ["ف", "Fa"], ["ق", "Qaf"], ["ك", "Kaf"], ["ل", "Lam"], ["م", "Mim"], ["ن", "Nun"], ["ه", "Ha"], ["و", "Waw"], ["ي", "Ya"]];
+const QAIDA_LESSONS=[{"title": "1. حروف مع الفتحة", "desc": "ፊደላት ከ ፈትሓ (ኣ) ጋር", "type": "table", "forms": [["ـَ", "َ"]]}, {"title": "2. حروف مع الكسرة", "desc": "ፊደላት ከ ካስራ (ኢ) ጋር", "type": "table", "forms": [["ـِ", "ِ"]]}, {"title": "3. حروف مع الضمة", "desc": "ፊደላት ከ ዶማ (ኡ) ጋር", "type": "table", "forms": [["ـُ", "ُ"]]}, {"title": "4. التنوين", "desc": "ባለ ሁለት ነጥብ ድምፅ (ኧን፣ ኢን፣ ኡን)", "type": "table", "forms": [["ـً", "ً"], ["ـٍ", "ٍ"], ["ـٌ", "ٌ"]]}, {"title": "5. السكون", "desc": "ፊደሉ ድምፅ አልባ የሚሆንበት ምልክት", "type": "table", "forms": [["ـْ", "ْ"]]}, {"title": "6. الشدة", "desc": "ፊደሉ ሁለት ጊዜ እንዲነበብ", "type": "table", "forms": [["ـَّ", "َّ"], ["ـِّ", "ِّ"], ["ـُّ", "ُّ"]]}, {"title": "7. مد الألف", "desc": "ረዥም ኣ (ا)", "type": "table", "forms": [["ـَا", "َا"]]}, {"title": "8. مد الواو", "desc": "ረዥም ኡ (و)", "type": "table", "forms": [["ـُو", "ُو"]]}, {"title": "9. مد الياء", "desc": "ረዥም ኢ (ي)", "type": "table", "forms": [["ـِي", "ِي"]]}, {"title": "10. كلمات بسيطة", "desc": "ቃላት ማንበብ", "type": "list", "items": [["كَتَبَ", "ጻፈ"], ["قَلَمٌ", "እስክሪብቶ"], ["بَيْتٌ", "ቤት"], ["شَمْسٌ", "ፀሐይ"], ["قَمَرٌ", "ጨረቃ"], ["نُورٌ", "ብርሃን"], ["بَابٌ", "በር"], ["عِلْمٌ", "ዕውቀት"]]}, {"title": "11. قصار السور", "desc": "ቀላል ምዕራፍ ማንበብ", "type": "list", "items": [["بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "በአላህ ስም፣ አዛኙ አዛኙ"], ["قُلْ هُوَ اللَّهُ أَحَدٌ", "በል፡ እርሱ አላህ አንድ ነው"], ["اللَّهُ الصَّمَدُ", "አላህ ተፈላጊ ነው"], ["لَمْ يَلِدْ وَلَمْ يُولَدْ", "አልወለደም አልተወለደም"], ["وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ", "ማንም ተመጣጣኝ የለውም"]]}];
+const QAIDA_VOWELS=[{h:'\u064E',n:'فَتْحَة'},{h:'\u0650',n:'كَسْرَة'},{h:'\u064F',n:'ضَمَّة'}];
+function qaidaSpeak(txt){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(txt);
+    u.lang='ar-SA'; u.rate=0.7;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function openQaida(){ ROUTE={page:'qaida',lesson:null}; render(); }
+function openQaidaLesson(i){ ROUTE={page:'qaida',lesson:i}; render(); }
+function qaidaTable(forms){
+  const rows=QAIDA_LETTERS.map(([ch,name])=>{
+    const cells=forms.map(([,mark])=>{ const syl=ch+mark; return `<button class="qCell" onclick="qaidaSpeak('${syl}')">${syl}</button>`; }).join('');
+    return `<div class="qRow" style="grid-template-columns:70px ${forms.map(()=>'1fr').join(' ')}">
+      <button class="qName" onclick="qaidaSpeak('${ch}')"><b>${ch}</b>${name}</button>${cells}</div>`;
+  }).join('');
+  return rows;
+}
+function renderQaida(){
+  if(ROUTE.lesson==null){
+    const list=QAIDA_LESSONS.map((l,i)=>`<button class="qLesson" onclick="openQaidaLesson(${i})">
+        <span class="qNum">${i+1}</span><span style="flex:1;min-width:0"><span style="display:block;font-weight:800">${l.title.replace(/^\d+\.\s*/,'')}</span><span class="trackEn">${l.desc}</span></span><span>›</span></button>`).join('');
+    return `<div class="qIntro">ቃኢዳ ኑራኒያ ለህፃናት የአረብኛ ፊደላትን እና አነባበብን ከመሠረቱ የሚያስተምር መጽሐፍ ነው። ትምህርት ይምረጡ። ፊደልን ወይም ቃልን ሲነኩ ይሰማል።<br>ድምፁ የሚሰማው በስልኩ ላይ የአረብኛ ድምፅ ካለ ብቻ ነው።</div>${list}`;
+  }
+  const L=QAIDA_LESSONS[ROUTE.lesson];
+  const nav=`<div class="qNav">
+      ${ROUTE.lesson>0?`<button class="qBtn" onclick="openQaidaLesson(${ROUTE.lesson-1})">‹ ቀዳሚ</button>`:'<span></span>'}
+      <button class="qBtn" onclick="ROUTE={page:'qaida',lesson:null};render()">ዝርዝር</button>
+      ${ROUTE.lesson<QAIDA_LESSONS.length-1?`<button class="qBtn" onclick="openQaidaLesson(${ROUTE.lesson+1})">ቀጣይ ›</button>`:'<span></span>'}
+    </div>`;
+  let body='';
+  if(L.type==='table'){
+    body=`<div class="qIntro">${L.desc}</div>`+qaidaTable(L.forms);
+  }else{
+    body=`<div class="qIntro">${L.desc}</div>`+L.items.map(([ar,am])=>`<button class="qWord" onclick="qaidaSpeak('${ar.replace(/'/g,"\\'")}')">
+        <span class="qWordAr">${ar}</span><span class="trackEn" style="font-size:12px">${am}</span></button>`).join('');
+  }
+  return nav+body+nav;
+}
+
+/* ================== KIDS CORNER ================== */
+const KIDS_WUDU=['ቢስሚላህ ማለት','እጅን ማጠብ','አፍን ማጠብ','አፍንጫን ማጠብ','ፊትን ማጠብ','ክንዶችን እስከ ክርን ማጠብ','ራስን ማበስ','ጆሮን ማበስ','እግሮችን ማጠብ'];
+const KIDS={game:null,q:null,picked:[],msg:'',solved:false};
+function kidsShuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function kidsStars(){ return DATA.kidStars||0; }
+function kidsAddStar(){ DATA.kidStars=(DATA.kidStars||0)+1; saveData(DATA); }
+function kidsStart(g){ KIDS.game=g; KIDS.msg=''; KIDS.solved=false; kidsNext(); render(); }
+function kidsNext(){
+  KIDS.msg=''; KIDS.solved=false; KIDS.picked=[];
+  if(KIDS.game==='letters'){
+    const target=QAIDA_LETTERS[Math.floor(Math.random()*QAIDA_LETTERS.length)];
+    let opts=[target];
+    while(opts.length<4){ const c=QAIDA_LETTERS[Math.floor(Math.random()*QAIDA_LETTERS.length)]; if(!opts.some(o=>o[0]===c[0])) opts.push(c); }
+    KIDS.q={target, opts:kidsShuffle(opts)};
+  }
+  if(KIDS.game==='words'){
+    const list=(QAIDA_LESSONS.find(l=>l.title.startsWith('10.'))||{}).items||[];
+    const target=list[Math.floor(Math.random()*list.length)];
+    let opts=[target[1]];
+    while(opts.length<3){ const c=list[Math.floor(Math.random()*list.length)][1]; if(!opts.includes(c)) opts.push(c); }
+    KIDS.q={target, opts:kidsShuffle(opts)};
+  }
+  if(KIDS.game==='wudu'){
+    KIDS.q={order:kidsShuffle(KIDS_WUDU.map((_,i)=>i))};
+  }
+}
+function kidsLetterAnswer(i){
+  if(KIDS.solved) return;
+  if(KIDS.q.opts[i][0]===KIDS.q.target[0]){ KIDS.solved=true; KIDS.msg='ጎበዝ! ⭐'; kidsAddStar(); }
+  else KIDS.msg='ሞክር፣ እንደገና!';
+  render();
+}
+function kidsWordAnswer(i){
+  if(KIDS.solved) return;
+  if(KIDS.q.opts[i]===KIDS.q.target[1]){ KIDS.solved=true; KIDS.msg='ጎበዝ! ⭐'; kidsAddStar(); }
+  else KIDS.msg='ሞክር፣ እንደገና!';
+  render();
+}
+function kidsWuduTap(idx){
+  if(KIDS.solved) return;
+  const expected=KIDS.picked.length;
+  if(idx===expected){
+    KIDS.picked.push(idx);
+    if(KIDS.picked.length===KIDS_WUDU.length){ KIDS.solved=true; KIDS.msg='ጎበዝ! ሁሉንም በትክክል አደረግክ ⭐'; kidsAddStar(); }
+    else KIDS.msg='ትክክል! ✓';
+  } else {
+    KIDS.msg='ቅደም ተከተሉን አስታውስ!';
+  }
+  render();
+}
+function renderKids(){
+  const head=`<div class="kidsScore">⭐ ${kidsStars()}</div>`;
+  if(!KIDS.game){
+    return head+`
+      <div class="qIntro">ለህፃናት! እየተጫወቱ ይማራሉ። ትክክል ሲመልሱ ኮከብ ያገኛሉ ⭐</div>
+      <button class="kidsGame" onclick="openQaida()"><span class="kidsEmo">🔤</span><span><b>ቃኢዳ ኑራኒያ</b><span class="trackEn">ፊደላትና አነባበብ ይማሩ</span></span></button>
+      <button class="kidsGame" onclick="kidsStart('letters')"><span class="kidsEmo">🔍</span><span><b>ፊደል ፈልግ</b><span class="trackEn">ትክክለኛውን የአረብኛ ፊደል ይምረጡ</span></span></button>
+      <button class="kidsGame" onclick="kidsStart('words')"><span class="kidsEmo">🧩</span><span><b>ቃል ግጥሚያ</b><span class="trackEn">የቃሉን ትርጉም ይምረጡ</span></span></button>
+      <button class="kidsGame" onclick="kidsStart('wudu')"><span class="kidsEmo">💧</span><span><b>የውዱእ ቅደም ተከተል</b><span class="trackEn">እርምጃዎቹን በትክክለኛው ቅደም ተከተል ይንኩ</span></span></button>`;
+  }
+  const next=KIDS.solved?`<button class="kidsNext" onclick="kidsNext();render()">ቀጣይ ›</button>`:'';
+  const msg=KIDS.msg?`<div class="kidsMsg">${KIDS.msg}</div>`:'';
+  let body='';
+  if(KIDS.game==='letters'){
+    const t=KIDS.q.target;
+    body=`<div class="kidsQ">ይህ የ<b>${t[1]}</b> ፊደል የትኛው ነው?</div>
+      <button class="kidsSpeak" onclick="qaidaSpeak('${t[0]}')">🔊 ያዳምጡ</button>
+      <div class="kidsGrid">${KIDS.q.opts.map((o,i)=>`<button class="kidsOpt kidsLetter" onclick="kidsLetterAnswer(${i})">${o[0]}</button>`).join('')}</div>`;
+  }
+  if(KIDS.game==='words'){
+    const t=KIDS.q.target;
+    body=`<div class="kidsQ">ይህ ቃል ምን ማለት ነው?</div>
+      <button class="kidsWordBig" onclick="qaidaSpeak('${t[0]}')">${t[0]}</button>
+      <div class="kidsGrid kidsGridCol">${KIDS.q.opts.map((o,i)=>`<button class="kidsOpt" onclick="kidsWordAnswer(${i})">${o}</button>`).join('')}</div>`;
+  }
+  if(KIDS.game==='wudu'){
+    const left=KIDS.q.order.filter(i=>!KIDS.picked.includes(i));
+    const done=KIDS.picked.map(i=>`<div class="kidsDone">${KIDS.picked.indexOf(i)+1}. ${KIDS_WUDU[i]}</div>`).join('');
+    body=`<div class="kidsQ">ውዱእ በምን ቅደም ተከተል ነው የሚሰራው? ቅደም ተከተሉን በቁጥር ቅደም ተከተል ይንኩ።</div>
+      ${done}
+      <div class="kidsGrid kidsGridCol">${left.map(i=>`<button class="kidsOpt" onclick="kidsWuduTap(${i})">${KIDS_WUDU[i]}</button>`).join('')}</div>`;
+  }
+  return head+msg+body+next+`<button class="kidsBack" onclick="KIDS.game=null;render()">‹ ወደ ጨዋታዎች</button>`;
+}
+
+/* ================== DAILY WORSHIP TRACKER ================== */
+const TRACK_ITEMS=[
+  {k:'fajr',am:'ፈጅር ሶላት',en:'Fajr prayer'},
+  {k:'dhuhr',am:'ዙህር ሶላት',en:'Dhuhr prayer'},
+  {k:'asr',am:'ዓስር ሶላት',en:'Asr prayer'},
+  {k:'maghrib',am:'መግሪብ ሶላት',en:'Maghrib prayer'},
+  {k:'isha',am:'ዒሻእ ሶላት',en:'Isha prayer'},
+  {k:'quran',am:'ቁርኣን ማንበብ',en:'Quran reading'},
+  {k:'morning',am:'የጠዋት አዝካር',en:'Morning adhkar'},
+  {k:'evening',am:'የምሽት አዝካር',en:'Evening adhkar'},
+  {k:'charity',am:'ሰደቃ መስጠት',en:'Charity'}
+];
+function openTracker(){ ROUTE={page:'tracker'}; render(); }
+function trackDayKey(d){
+  d=d||new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function trackDay(k){ return (DATA.tracker&&DATA.tracker[k])||{}; }
+function toggleTrack(item){
+  DATA.tracker=DATA.tracker||{};
+  const k=trackDayKey();
+  const day=DATA.tracker[k]||{};
+  day[item]=!day[item];
+  DATA.tracker[k]=day;
+  const keys=Object.keys(DATA.tracker).sort();
+  while(keys.length>60){ delete DATA.tracker[keys.shift()]; }
+  saveData(DATA); render();
+}
+function renderTracker(){
+  const today=trackDay(trackDayKey());
+  const done=TRACK_ITEMS.filter(i=>today[i.k]).length;
+  const pct=Math.round(done/TRACK_ITEMS.length*100);
+  let weekDone=0, weekTotal=0;
+  for(let i=0;i<7;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const day=trackDay(trackDayKey(d));
+    weekDone+=TRACK_ITEMS.filter(x=>day[x.k]).length;
+    weekTotal+=TRACK_ITEMS.length;
+  }
+  const wpct=Math.round(weekDone/weekTotal*100);
+  const rows=TRACK_ITEMS.map(i=>`<button class="trackRow ${today[i.k]?'done':''}" onclick="toggleTrack('${i.k}')">
+      <span class="trackBox">${today[i.k]?'✓':''}</span>
+      <span style="flex:1;min-width:0"><span style="display:block">${i.am}</span><span class="trackEn">${i.en}</span></span>
+    </button>`).join('');
+  return `<div class="dhikrCard">
+      <div class="sectionLabel" style="margin:0">ዛሬ · ${done} / ${TRACK_ITEMS.length}</div>
+      <div class="progBar"><div class="progFill" style="width:${pct}%"></div></div>
+      <div class="trackNote">ባለፉት 7 ቀናት: ${wpct}%</div>
+    </div>${rows}
+    <div class="trackNote" style="margin-top:10px">መረጃው በዚህ መሣሪያ ላይ ብቻ ይቀመጣል።</div>`;
+}
+
+function renderAsma(){
+  return `<div class="asmaIntro">ለአላህ 99 ውብ ስሞች · 99 Beautiful Names</div><div class="asmaGrid">`+ASMA.map((a,i)=>`<div class="asmaCard"><span class="asmaNum">${i+1}</span><div class="asmaAr">${a[0]}</div><div class="asmaEn">${a[1]}</div><div class="asmaAm">${a[2]}</div></div>`).join('')+`</div>`;
+}
+function renderDuaLike(){
+  const adh=ROUTE.cat==='adhkar'; const tabs=adh?ADHKAR_TABS:DUA_TABS; const src=adh?ADHKAR:DUAS;
+  const cards=(src[ROUTE.dtab]||[]).map(it=>`<div class="dhikrCard"><span class="dhikrBadge">${it.label}</span>
+    <div class="dhikrAr">${it.ar}</div><div class="dhikrTranslit">${it.translit}</div><div class="dhikrEn">${it.en}</div>
+    <div class="dhikrAm">${it.am}</div><div class="dhikrSrc">${it.source}</div></div>`).join('');
+  return `<div class="tabs">${tabs.map(tb=>`<div class="tab ${ROUTE.dtab===tb.k?'active':''}" onclick="setDtab('${tb.k}')">${t(tb.k)}</div>`).join('')}</div>${cards}`+renderFeed(adh?'worship_adhkar':'worship_dua');
+}
+function renderSalawatPage(){
+  return SALAWAT.map(s=>{ const c=DATA.counters[s.id]||0; return `<div class="dhikrCard">
+    <div class="dhikrHead"><div><div class="dhikrTitle">${s.title}</div><div class="dhikrSub">${s.subtitle}</div></div><div class="dhikrRec">Recommended: ${s.recommended}</div></div>
+    <div class="dhikrAr">${s.ar}</div><div class="dhikrTranslit">${s.translit}</div><div class="dhikrEn">${s.en}</div><div class="dhikrAm">${s.am}</div>
+    <div class="counterRow"><button class="resetBtn" onclick="resetCounter('${s.id}')">↻</button>
+    <button class="countBtn" onclick="tapCounter('${s.id}')">+ <span id="cnt_${s.id}">${c}</span></button></div></div>`; }).join('')+renderFeed('worship_salawat');
+}
+function tapCounter(id){ DATA.counters[id]=(DATA.counters[id]||0)+1; saveData(DATA); const e=document.getElementById('cnt_'+id); if(e) e.textContent=DATA.counters[id]; }
+function resetCounter(id){ DATA.counters[id]=0; saveData(DATA); const e=document.getElementById('cnt_'+id); if(e) e.textContent=0; }
+function renderTasbih(){
+  const item=TASBIH_ITEMS.find(x=>x.k===ROUTE.ttab)||TASBIH_ITEMS[0]; const c=DATA.tasbihCounts[item.k]||0;
+  return `<div class="tabs">${TASBIH_ITEMS.map(x=>`<div class="tab ${ROUTE.ttab===x.k?'active':''}" onclick="setTtab('${x.k}')">${x.word}</div>`).join('')}</div>
+    <div class="tasbihWrap"><div class="tasbihAr">${item.ar}</div><div class="tasbihWord">${item.word}</div><div class="tasbihMean">${item.mean}</div>
+    <div class="tasbihRing"><div id="tasbihNum">${c}</div><div class="tasbihTarget">/ 33</div></div>
+    <button class="tasbihBtn" onclick="tapTasbih()">👆</button></div>`;
+}
+function setTtab(k){ ROUTE.ttab=k; render(); }
+function tapTasbih(){
+  const k=ROUTE.ttab; DATA.tasbihCounts[k]=(DATA.tasbihCounts[k]||0)+1; saveData(DATA);
+  const e=document.getElementById('tasbihNum'); if(e) e.textContent=DATA.tasbihCounts[k];
+  try{ if(navigator.vibrate) navigator.vibrate(15); }catch(x){}
+}
+function resetTasbihCurrent(){ DATA.tasbihCounts[ROUTE.ttab]=0; saveData(DATA); render(); }
+
+function editPrayerTimes(){
+  const p=DATA.prayerTimes; const f=(k)=>`<div class="field"><label>${t(k)}</label><input type="time" id="pt_${k}" value="${p[k]||''}"></div>`;
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('todayPrayerTimes')}</h3>
+    <div class="row2">${f('fajr')}${f('dhuhr')}</div><div class="row2">${f('asr')}${f('maghrib')}</div>${f('isha')}
+    <div class="btnRow"><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button><button class="btn primary" onclick="savePrayerTimes()">${t('save')}</button></div>`);
+}
+function savePrayerTimes(){
+  const o={}; ['fajr','dhuhr','asr','maghrib','isha'].forEach(k=>o[k]=norm24(document.getElementById('pt_'+k).value));
+  DATA.prayerTimes=o; saveData(DATA); closeModal(); render();
+}
+function mosqueLocator(){
+  if(!extLink()) return;
+  if(!navigator.geolocation){ toast(t('noGeo')); return; }
+  navigator.geolocation.getCurrentPosition(pos=>{ window.open(`https://www.google.com/maps/search/mosque/@${pos.coords.latitude},${pos.coords.longitude},15z`,'_blank','noopener,noreferrer'); },()=>toast(t('noGeo')));
+}
+let _qHandler=null, _qAbs=false;
+function stopQibla(){ if(_qHandler){ window.removeEventListener('deviceorientationabsolute',_qHandler,true); window.removeEventListener('deviceorientation',_qHandler,true); _qHandler=null; } }
+function qiblaFinder(){
+  if(!navigator.geolocation){ toast(t('noGeo')); return; }
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const b=qiblaBearing(pos.coords.latitude,pos.coords.longitude);
+    openModal(`<button class="closeX" onclick="stopQibla();closeModal()">✕</button><h3>${t('qiblaFinder')}</h3>
+      <div style="text-align:center;padding:14px 0;color:var(--text)">
+        <div class="compassWrap">
+          <svg class="ring" id="qRing" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" opacity=".25" stroke-width="2"/>
+            <text x="50" y="14" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor">N</text>
+            <text x="50" y="95" text-anchor="middle" font-size="8" fill="currentColor" opacity=".5">S</text>
+            <text x="94" y="53" text-anchor="middle" font-size="8" fill="currentColor" opacity=".5">E</text>
+            <text x="6" y="53" text-anchor="middle" font-size="8" fill="currentColor" opacity=".5">W</text></svg>
+          <svg class="kaaba" id="qArrow" viewBox="0 0 100 100" style="transform:rotate(${b}deg)"><path d="M50 8 L63 52 L50 44 L37 52 Z" fill="var(--accent)"/><circle cx="50" cy="50" r="4" fill="currentColor"/></svg>
+        </div>
+        <p style="margin-top:12px;font-size:17px;font-weight:800">${Math.round(b)}° ${t('fromNorth')}</p>
+        <p class="compassHint" id="qHint">🧭 ስልክዎን ጠፍጣፋ ያድርጉ — ቀስቱ ወደ ቂብላ ያመለክታል</p>
+        <button class="btn ghost" id="qEnable" style="margin-top:8px">🧭 Compass</button></div>`);
+    const arrow=()=>document.getElementById('qArrow'), ring=()=>document.getElementById('qRing');
+    const onOri=e=>{
+      let h=null;
+      if(typeof e.webkitCompassHeading==='number') h=e.webkitCompassHeading;
+      else if(e.absolute===true || e.type==='deviceorientationabsolute'){ if(e.alpha!=null) h=360-e.alpha; }
+      if(h==null) return;
+      const a=arrow(), r=ring(); if(!a){ stopQibla(); return; }
+      a.style.transform=`rotate(${b-h}deg)`; r.style.transform=`rotate(${-h}deg)`;
+      const hint=document.getElementById('qHint'); if(hint) hint.textContent=Math.abs(((b-h+540)%360)-180)<5?'✅ ወደ ቂብላ ትክክል ነዎት':'🧭 ስልክዎን ያዙሩ';
+    };
+    const start=async()=>{
+      try{
+        if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+          const r=await DeviceOrientationEvent.requestPermission(); if(r!=='granted') return;
+        }
+      }catch(e){ return; }
+      stopQibla(); _qHandler=onOri;
+      window.addEventListener('deviceorientationabsolute',onOri,true);
+      window.addEventListener('deviceorientation',onOri,true);
+      const bt=document.getElementById('qEnable'); if(bt) bt.style.display='none';
+    };
+    const bt=document.getElementById('qEnable'); if(bt) bt.onclick=start;
+    if(typeof DeviceOrientationEvent==='undefined'){ if(bt) bt.style.display='none'; }
+    else if(typeof DeviceOrientationEvent.requestPermission!=='function'){ start(); }
+  },()=>toast(t('noGeo')),{enableHighAccuracy:false,timeout:15000,maximumAge:600000});
+}
+function islamicCalendar(){
+  const g=new Date(), h=gregorianToHijri(g);
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('islamicCalendar')}</h3>
+    <p style="text-align:center;font-size:20px;font-weight:800;margin-top:10px;color:var(--accent)">${h.day} ${hijriName(h.month)} ${h.year}</p>
+    <p style="text-align:center;color:var(--muted);font-size:13px">${g.toLocaleDateString()}</p>`);
+}
+
+/* ================== AZAN + PRAYER ALERTS ================== */
+function openAzanPicker(){
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('azanSound')}</h3>
+    <p class="hint">${t('azanHint')}</p>
+    <div class="field"><input type="file" id="azan_file" accept="audio/*"></div>
+    <div class="btnRow"><button class="btn ghost" onclick="playAzan()">▶</button><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button>
+    <button class="btn primary" onclick="saveAzan()">${t('save')}</button></div>`);
+}
+async function saveAzan(){
+  const f=document.getElementById('azan_file').files[0]; if(!f){ closeModal(); return; }
+  try{ const old=DATA.azanId; DATA.azanId=await mediaPut(f); if(old) mediaDel(old); saveData(DATA); closeModal(); render(); toast('✅ '+t('saved')); }
+  catch(e){ toast('⚠ '+e.message); }
+}
+async function playAzan(){
+  if(!DATA.azanId) return; const u=await mediaURL(DATA.azanId);
+  if(u){ try{ new Audio(u).play().catch(()=>{}); }catch(e){} }
+}
+let lastFired=null;
+function checkPrayer(){
+  const n=new Date(); const cur=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+  const name=Object.keys(DATA.prayerTimes).find(k=>DATA.prayerTimes[k]===cur);
+  if(name&&lastFired!==cur){
+    lastFired=cur;
+    if(DATA.notif) notify(t('prayerNow').replace('{p}',t(name)),formatTime12(cur));
+    playAzan();
+  }
+}
+
+/* ================== SETTINGS ================== */
+function srow(icon,t1,t2,fn,cls){
+  return `<div class="settingsRow ${cls||''}" onclick="${fn}"><div class="sic">${icon}</div><div class="stext"><div class="st1">${t1}</div>${t2?`<div class="st2">${t2}</div>`:''}</div>${cls==='danger'?'':'<div class="chev">›</div>'}</div>`;
+}
+function themeName(th){ return th.n[DATA.lang]||th.n.en; }
+function renderSettings(){
+  const lang=LANGS.find(x=>x.k===DATA.lang); const th=THEMES.find(x=>x.k===DATA.theme)||THEMES[0];
+  return `
+    <div class="settingsGroupTitle">${t('preferences')}</div>
+    ${srow('🌐',t('language'),lang.n,'openLangPicker()')}
+    ${srow('🎨',t('theme'),themeName(th),'openThemePicker()')}
+    ${srow('🔔',t('notifications'),DATA.notif?t('notifOn'):t('notifOff'),'toggleNotif()')}
+    <div class="settingsGroupTitle">${t('support')}</div>
+    ${srow('🎧','Support Center',t('getHelpTelegram'),'openSupportLink()')}
+    <div class="settingsGroupTitle">${t('adminMode')}</div>
+    ${DATA.admin?
+      srow('🔑',t('pinLabel'),t('adminOn'),'openPinChanger()')+
+      srow('🔊',t('azanSound'),DATA.azanId?t('azanSet'):t('azanNotSet'),'openAzanPicker()')+
+      srow('↩',t('logout'),'','logoutAdmin()','danger')
+      : srow('🔑',t('adminMode'),'','loginAdmin()')}
+    <div class="settingsGroupTitle">${t('about')}</div>
+    ${srow('❓',t('about'),t('version')+' 2.0.0',"toast('"+t('appName').replace(/'/g,'’')+" v2.0.0')")}`;
+}
+function openLangPicker(){
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('language')}</h3>
+    ${LANGS.map(l=>`<div class="langRow ${DATA.lang===l.k?'active':''}" onclick="setLang('${l.k}')"><span>${l.n}</span><span>${DATA.lang===l.k?'✓':''}</span></div>`).join('')}`);
+}
+function openThemePicker(){
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('theme')}</h3>
+    <div class="themeGrid">${THEMES.map(th=>`<div class="themeItem ${DATA.theme===th.k?'active':''}" onclick="setTheme('${th.k}')"><div class="dot" style="background:${th.c}"></div>${themeName(th)}</div>`).join('')}</div>`);
+}
+function setLang(l){ DATA.lang=l; saveData(DATA); closeModal(); render(); }
+function setTheme(k){ DATA.theme=k; saveData(DATA); closeModal(); render(); }
+function openSupportLink(){ openExternal(DATA.supportLink||SOCIAL_LINKS[0].url); }
+function loginAdmin(){
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('adminMode')}</h3>
+    <div class="field"><label>Email</label><input type="email" id="aEmail" autocomplete="username"></div><div class="field"><label>Password</label><input type="password" id="aPass" autocomplete="current-password"></div>
+    <div class="btnRow"><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button><button class="btn primary" onclick="checkPin()">${t('enter')}</button></div>`);
+}
+async function checkPin(){
+  const em=document.getElementById('aEmail').value.trim(), pw=document.getElementById('aPass').value;
+  try{ await awLogin(em,pw); DATA.admin=true; saveData(DATA); closeModal(); render(); }
+  catch(e){ toast('⚠ '+e.message); }
+}
+async function logoutAdmin(){ await awLogout(); DATA.admin=false; saveData(DATA); render(); }
+function openPinChanger(){
+  openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${t('pinLabel')}</h3>
+    <div class="field"><label>${t('newPin')}</label><input type="text" id="newPinInput"></div>
+    <div class="btnRow"><button class="btn ghost" onclick="closeModal()">${t('cancel')}</button><button class="btn primary" onclick="changePin()">${t('save')}</button></div>`);
+}
+function changePin(){ const v=document.getElementById('newPinInput').value.trim(); if(!v) return; DATA.adminPin=v; saveData(DATA); closeModal(); toast('✅ '+t('saved')); }
+
+/* ================== MODAL ================== */
+function openModal(html){
+  closeModal();
+  const ov=document.createElement('div'); ov.className='overlay'; ov.id='modalOverlay';
+  ov.innerHTML=`<div class="sheet" style="position:relative">${html}</div>`;
+  ov.addEventListener('click',e=>{ if(e.target===ov) closeModal(); });
+  document.body.appendChild(ov);
+}
+function closeModal(){ try{stopQibla();}catch(e){} const o=document.getElementById('modalOverlay'); if(o) o.remove(); }
+
+/* ================== START ================== */
+render();
+(function(){
+  const s=document.getElementById('splash'); if(!s) return;
+  s.querySelector('img').src=LOGO_URI; s.querySelector('h1').textContent=t('appName'); s.querySelector('p').textContent=t('greet');
+  setTimeout(()=>{ s.classList.add('hide'); setTimeout(()=>s.remove(),700); },1900);
+})();
+setInterval(checkPrayer,15000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) checkPrayer(); });
+/* browsers block audio until the first tap — unlock it silently */
+(function(){ const un=()=>{ try{ const a=new Audio(); a.muted=true; a.play&&a.play().catch(()=>{}); }catch(e){} document.removeEventListener('pointerdown',un); }; document.addEventListener('pointerdown',un,{once:true}); })();
+/* ===== Ask visitors to install / download the app ===== */
+(function(){
+  const ua=navigator.userAgent||'';
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  const inAppWebView=/; wv\)/.test(ua)||!location.protocol.startsWith('http');
+  const isAndroid=/Android/i.test(ua), isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  return; // automatic 'download the app' banner is disabled (the old APK is outdated)
+  if(isStandalone||inAppWebView||!(isAndroid||isIOS)) return;
+  const KEY='risala_install_dismissed';
+  try{ const d=+localStorage.getItem(KEY)||0; if(Date.now()-d<3*24*3600*1000) return; }catch(e){}
+  let deferred=null;
+  window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferred=e; const b=document.getElementById('instPwa'); if(b) b.style.display=''; });
+  window.addEventListener('appinstalled',()=>hide(true));
+  function hide(save){ const el=document.getElementById('installBar'); if(el) el.remove(); if(save){ try{localStorage.setItem(KEY,String(Date.now()));}catch(e){} } }
+  function show(){
+    if(document.getElementById('installBar')) return;
+    const bar=document.createElement('div'); bar.id='installBar';
+    const am=DATA.lang==='am';
+    const title=am?'የሪሳላ አፑን ያውርዱ':'Get the Risala app';
+    const sub=isIOS?(am?'በSafari ወደ መነሻ ገጽ ያክሉት':'Add it to your Home Screen'):(am?'ፈጣን፣ ያለ ኢንተርኔትም ይሰራል':'Faster, works offline');
+    bar.innerHTML=`<img src="${LOGO_URI}" alt=""><div class="it"><b>${title}</b><span>${sub}</span></div>
+      <div class="ib">${isAndroid?`<a class="go" href="risala.apk" download="Risala.apk" id="instApk">⬇ ${am?'አውርድ':'Download'}</a>`:`<button class="go" id="instIos">${am?'እንዴት?':'How?'}</button>`}
+      ${isAndroid?`<button class="go" id="instPwa" style="display:none;background:var(--brand)">${am?'ጫን':'Install'}</button>`:''}
+      <button class="no" id="instNo">${am?'ዝጋ':'Not now'}</button></div>`;
+    document.body.appendChild(bar);
+    document.getElementById('instNo').onclick=()=>hide(true);
+    const apk=document.getElementById('instApk'); if(apk) apk.addEventListener('click',()=>{ toast(am?'ማውረድ ተጀምሯል። ከጨረሰ በኋላ ፋይሉን ከፍተው ይጫኑ።':'Download started. Open the file to install.'); setTimeout(()=>hide(true),1500); });
+    const pwa=document.getElementById('instPwa'); if(pwa){ if(deferred) pwa.style.display=''; pwa.onclick=async()=>{ if(!deferred) return; deferred.prompt(); try{ await deferred.userChoice; }catch(e){} deferred=null; hide(true); }; }
+    const ios=document.getElementById('instIos'); if(ios) ios.onclick=()=>openModal(`<button class="closeX" onclick="closeModal()">✕</button><h3>${am?'አፑን በiPhone ላይ ለመጫን':'Install on iPhone'}</h3>
+      <p style="line-height:1.9">${am?'1. Safari ውስጥ የ <b>Share</b> (⬆︎) ምልክቱን ይጫኑ<br>2. <b>"Add to Home Screen"</b> ይምረጡ<br>3. <b>Add</b> ይጫኑ':'1. Tap the <b>Share</b> (⬆︎) button in Safari<br>2. Choose <b>"Add to Home Screen"</b><br>3. Tap <b>Add</b>'}</p>`);
+  }
+  setTimeout(show,3200);
+})();
+/* PWA: offline support */
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){ window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+setInterval(()=>{ const e=document.getElementById('nextPrayer'); if(e) e.textContent=nextPrayerText(); },30000);
+
+
+/* apply modern icons after screens and modals are drawn */
+(function(){
+  const __render=render; render=function(){ __render.apply(this,arguments); modernIcons(appEl); };
+  const __open=openModal; openModal=function(){ __open.apply(this,arguments); modernIcons(document.getElementById('modalOverlay')); };
+  modernIcons(appEl);
+})();
+
+awInit();
+</script>
+</body>
+</html>
